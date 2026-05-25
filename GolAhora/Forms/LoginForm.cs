@@ -14,7 +14,7 @@ namespace GolAhora.Forms
     public partial class LoginForm : Form
     {
 
-
+        ApiService apiService = new ApiService();
         public LoginForm()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace GolAhora.Forms
             string usuario = txtEmail.Text;
             string contraseña = txtPassword.Text;
 
-            ApiService apiService = new ApiService();
+            
             string result = await apiService.LoginAsync(usuario, contraseña);
             if (result != null)
             {

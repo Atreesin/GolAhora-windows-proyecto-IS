@@ -12,11 +12,12 @@ namespace GolAhora.Forms
 {
     public partial class MenuPrincipalForm : Form
     {
+        private ApiService apiService = new ApiService();
         public MenuPrincipalForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            
             // inicializar los modelos de datos (proxi de los datos reales)
             // los datos se van a cargar desde la base de datos, pero por ahora se pueden cargar con datos de prueba
             // club 
@@ -31,7 +32,7 @@ namespace GolAhora.Forms
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            ApiService apiService = new ApiService();
+            
             var result = await apiService.GetUserDataAsync();
             MessageBox.Show(result ?? "No se pudo obtener los datos del usuario");
 
@@ -39,7 +40,7 @@ namespace GolAhora.Forms
 
         private async void MenuPrincipalForm_Load(object sender, EventArgs e)
         {
-            ApiService apiService = new ApiService();
+            
             var result = await apiService.GetUserDataAsync();
             var info = JsonNode.Parse(result);
             txtUsername.Text = ($"{info?["username"] ?? "Desconocido"}");
