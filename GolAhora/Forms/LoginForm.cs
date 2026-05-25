@@ -1,10 +1,12 @@
-﻿using GolAhora.Utils;
+﻿using GolAhora.Services;
+using GolAhora.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Windows.Forms;
 
 namespace GolAhora.Forms
@@ -16,42 +18,10 @@ namespace GolAhora.Forms
         public LoginForm()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
-        {
-            string usuario = txtEmail.Text;
-            string contraseña = txtPassword.Text;
 
-            using (HttpClient client = new HttpClient())
-            {
-                var values = new Dictionary<string, string>
-            {
-                { "email", usuario },
-                { "password", contraseña }
-            };
-
-                var content = new FormUrlEncodedContent(values);
-                var response = await client.PostAsync("http://localhost/api/login", content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string result = await response.Content.ReadAsStringAsync();
-                    // Supongamos que la API devuelve directamente el token
-                    SessionManager.SessionId = result;
-
-                    // Abrir menú principal
-                    MenuPrincipalForm menu = new MenuPrincipalForm();
-                    menu.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                }
-            }
-        }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
@@ -63,34 +33,34 @@ namespace GolAhora.Forms
             string usuario = txtEmail.Text;
             string contraseña = txtPassword.Text;
 
-            using (HttpClient client = new HttpClient())
+            ApiService apiService = new ApiService();
+            string result = await apiService.LoginAsync(usuario, contraseña);
+            if (result != null)
             {
-                client.DefaultRequestHeaders.Add("plataform", "windows");
-                var values = new Dictionary<string, string>
-            {
-                { "email", usuario },
-                { "password", contraseña }
-            };
+                
+                SessionManager.SessionId = (JsonNode.Parse(result)?["token"] ?? "").ToString();
 
-                var content = new FormUrlEncodedContent(values);
-                var response = await client.PostAsync("http://localhost/api/login", content);
+                //MessageBox.Show($"Inicio de sesión exitoso. ID de sesión: {SessionManager.SessionId}");
+                
+                MenuPrincipalForm menu = new MenuPrincipalForm();
 
-                if (response.IsSuccessStatusCode)
+                menu.FormClosed += (sender, e) =>
                 {
-                    string result = await response.Content.ReadAsStringAsync();
-                    // Supongamos que la API devuelve directamente el token
-                    SessionManager.SessionId = result;
+                    txtEmail.Text = "";
+                    txtPassword.Text = "";
+                    SessionManager.SessionId = null;
+                    int x = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;  // 50 px a la derecha
+                    int y = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2; // 100 px abajo
+                    this.Location = new Point(x, y);
+                    this.Show();
+                };
 
-                    // Abrir menú principal
-                    MenuPrincipalForm menu = new MenuPrincipalForm();
-                    menu.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                }
+                menu.Show();
+                this.Hide();
+
+
             }
+            
         }
     }
 }
