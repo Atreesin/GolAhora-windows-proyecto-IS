@@ -10,7 +10,7 @@ namespace GolAhora.Services
     {
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri("http://localhost/api/")
+            BaseAddress = new Uri("https://golahora-proyecto-is.onrender.com/api/")
         };
 
         static ApiService()

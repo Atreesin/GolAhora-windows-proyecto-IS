@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GolAhora.Forms
 {
@@ -28,21 +29,22 @@ namespace GolAhora.Forms
 
         }
 
-        private async void btnLogin_Click_1(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
+            
             string usuario = txtEmail.Text;
             string contraseña = txtPassword.Text;
 
-            
+
             string result = await apiService.LoginAsync(usuario, contraseña);
             if (result != null)
             {
-                
+
                 SessionManager.SessionId = (JsonNode.Parse(result)?["token"] ?? "").ToString();
 
                 //MessageBox.Show($"Inicio de sesión exitoso. ID de sesión: {SessionManager.SessionId}");
-                
-                MenuPrincipalForm menu = new MenuPrincipalForm();
+
+                Form menu = new PrincipalForm();
 
                 menu.FormClosed += (sender, e) =>
                 {
@@ -60,7 +62,6 @@ namespace GolAhora.Forms
 
 
             }
-            
         }
     }
 }

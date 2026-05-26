@@ -1,30 +1,30 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
-    "net10.0-windows7.0": {}
+    "net10.0-windows": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net10.0-windows7.0": []
+    "net10.0-windows": []
   },
   "packageFolders": {
-    "C:\\Users\\atree\\.nuget\\packages\\": {},
+    "C:\\Users\\vboxuser\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Nueva carpeta\\ingenieria informatica\\Ingenieria de Software I\\TPI\\Gol Ahora App\\GolAhora\\GolAhora\\GolAhora.csproj",
+      "projectUniqueName": "C:\\Users\\vboxuser\\source\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
       "projectName": "GolAhora",
-      "projectPath": "E:\\Nueva carpeta\\ingenieria informatica\\Ingenieria de Software I\\TPI\\Gol Ahora App\\GolAhora\\GolAhora\\GolAhora.csproj",
-      "packagesPath": "C:\\Users\\atree\\.nuget\\packages\\",
-      "outputPath": "E:\\Nueva carpeta\\ingenieria informatica\\Ingenieria de Software I\\TPI\\Gol Ahora App\\GolAhora\\GolAhora\\obj\\",
+      "projectPath": "C:\\Users\\vboxuser\\source\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
+      "packagesPath": "C:\\Users\\vboxuser\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vboxuser\\source\\GolAhora-windows-proyecto-IS\\GolAhora\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\atree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vboxuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,11 +33,10 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.emzi0767.com/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0-windows7.0": {
+        "net10.0-windows": {
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {}
@@ -53,10 +52,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
-      "net10.0-windows7.0": {
+      "net10.0-windows": {
         "framework": "net10.0-windows7.0",
         "targetAlias": "net10.0-windows",
         "imports": [
@@ -78,7 +77,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -58,13 +58,14 @@
             // 
             // btnLogin
             // 
+            btnLogin.FlatStyle = FlatStyle.System;
             btnLogin.Location = new Point(160, 305);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(100, 23);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Iniciar Sesión";
             btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click_1;
+            btnLogin.Click += btnLogin_Click;
             // 
             // lblEmail
             // 
@@ -113,7 +114,6 @@
             MaximumSize = new Size(419, 489);
             MinimumSize = new Size(419, 489);
             Name = "LoginForm";
-            ShowIcon = false;
             Text = "Gol Ahora - Iniciar Sesión";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
