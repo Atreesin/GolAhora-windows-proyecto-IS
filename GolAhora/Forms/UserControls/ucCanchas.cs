@@ -17,6 +17,32 @@ public partial class ucCanchas : UserControl
         InitializeComponent();
     }
 
+    //
+    //Busqueda en la lista
+    //
+    private void ValidarCamposBusqueda(object sender, EventArgs e)
+    {
+        btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+            && (cbFiltrado.SelectedItem != null || cbEstados.SelectedItem != null);
+    }
+
+    private void cbEstados_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+    private void cbFiltrar_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+    private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+    
+    /*Botón de búsqueda*/
+    private void btnBuscar_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    //
+    //
+    //
+
     private void tcCanchas_Click(object sender, EventArgs e)
     {
         //limpiamos selección de las lista
@@ -26,7 +52,7 @@ public partial class ucCanchas : UserControl
         bool pestañaCanchas = (tcCanchas.SelectedIndex == 0);
 
         cbEstados.Enabled = pestañaCanchas;
-        cbFiltrar.Enabled = pestañaCanchas;
+        cbFiltrado.Enabled = pestañaCanchas;
         txtBusqueda.Enabled = pestañaCanchas;
         btnBuscar.Enabled = pestañaCanchas;
 
@@ -71,11 +97,9 @@ public partial class ucCanchas : UserControl
         listBoxTiposCancha.ClearSelected();
     }
 
-    /*Botones del panel*/
-    private void btnBuscar_Click(object sender, EventArgs e)
-    {
-
-    }
+    //
+    //Botones del panel
+    //
 
     /*Botones de la pestaña canchas*/
     private void btnRegistrarCancha_Click(object sender, EventArgs e)
@@ -115,7 +139,6 @@ public partial class ucCanchas : UserControl
     }
 
     /*Botones de la pestaña tipos de cancha*/
-    
     private void btnRegistrarTipo_Click(object sender, EventArgs e)
     {
         //limpiamos selección de la lista
@@ -131,10 +154,10 @@ public partial class ucCanchas : UserControl
         listBoxTiposCancha.ClearSelected();
 
         MessageBox.Show(
-            "El reporte de tipos de canchas del club se ha generado correctamente",
-            "Reporte de tipos de cancha",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+                "El reporte de tipos de cancha del club se encuentra en proceso...",
+                "Reporte de tipos de cancha",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
     }
 
     private void btnConsultarTipo_Click(object sender, EventArgs e)
@@ -157,5 +180,4 @@ public partial class ucCanchas : UserControl
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
     }
-    
 }

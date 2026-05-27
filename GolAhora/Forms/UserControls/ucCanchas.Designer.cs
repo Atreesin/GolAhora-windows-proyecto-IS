@@ -29,7 +29,7 @@ partial class ucCanchas
     private void InitializeComponent()
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCanchas));
-        cbFiltrar = new ComboBox();
+        cbFiltrado = new ComboBox();
         tcCanchas = new TabControl();
         tabCanchas = new TabPage();
         scCanchas = new SplitContainer();
@@ -80,16 +80,17 @@ partial class ucCanchas
         lateralMenuTipos.SuspendLayout();
         SuspendLayout();
         // 
-        // cbFiltrar
+        // cbFiltrado
         // 
-        cbFiltrar.DropDownStyle = ComboBoxStyle.DropDownList;
-        cbFiltrar.FormattingEnabled = true;
-        cbFiltrar.Items.AddRange(new object[] { "Tipo", "Todas" });
-        cbFiltrar.Location = new Point(339, 6);
-        cbFiltrar.Margin = new Padding(4, 3, 4, 3);
-        cbFiltrar.Name = "cbFiltrar";
-        cbFiltrar.Size = new Size(98, 23);
-        cbFiltrar.TabIndex = 14;
+        cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
+        cbFiltrado.FormattingEnabled = true;
+        cbFiltrado.Items.AddRange(new object[] { "ID", "Nombre", "Tipo" });
+        cbFiltrado.Location = new Point(337, 6);
+        cbFiltrado.Margin = new Padding(4, 3, 4, 3);
+        cbFiltrado.Name = "cbFiltrado";
+        cbFiltrado.Size = new Size(100, 23);
+        cbFiltrado.TabIndex = 14;
+        cbFiltrado.SelectedIndexChanged += cbFiltrar_SelectedIndexChanged;
         // 
         // tcCanchas
         // 
@@ -416,11 +417,12 @@ partial class ucCanchas
         cbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
         cbEstados.FormattingEnabled = true;
         cbEstados.Items.AddRange(new object[] { "Activas", "Bloqueadas", "Todas" });
-        cbEstados.Location = new Point(261, 6);
+        cbEstados.Location = new Point(229, 6);
         cbEstados.Margin = new Padding(4, 3, 4, 3);
         cbEstados.Name = "cbEstados";
-        cbEstados.Size = new Size(70, 23);
+        cbEstados.Size = new Size(100, 23);
         cbEstados.TabIndex = 15;
+        cbEstados.SelectedIndexChanged += cbEstados_SelectedIndexChanged;
         // 
         // txtBusqueda
         // 
@@ -428,11 +430,12 @@ partial class ucCanchas
         txtBusqueda.Name = "txtBusqueda";
         txtBusqueda.Size = new Size(174, 23);
         txtBusqueda.TabIndex = 16;
+        txtBusqueda.TextChanged += txtBusqueda_TextChanged;
         // 
         // lblFiltrado
         // 
         lblFiltrado.AutoSize = true;
-        lblFiltrado.Location = new Point(189, 10);
+        lblFiltrado.Location = new Point(157, 10);
         lblFiltrado.Name = "lblFiltrado";
         lblFiltrado.Size = new Size(65, 15);
         lblFiltrado.TabIndex = 17;
@@ -457,7 +460,7 @@ partial class ucCanchas
         Controls.Add(lblFiltrado);
         Controls.Add(txtBusqueda);
         Controls.Add(cbEstados);
-        Controls.Add(cbFiltrar);
+        Controls.Add(cbFiltrado);
         Controls.Add(tcCanchas);
         Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
         Margin = new Padding(4, 3, 4, 3);
@@ -486,7 +489,7 @@ partial class ucCanchas
 
     #endregion
 
-    private System.Windows.Forms.ComboBox cbFiltrar;
+    private System.Windows.Forms.ComboBox cbFiltrado;
     private System.Windows.Forms.TabControl tcCanchas;
     private System.Windows.Forms.TabPage tabCanchas;
     private System.Windows.Forms.TabPage tabTiposCancha;

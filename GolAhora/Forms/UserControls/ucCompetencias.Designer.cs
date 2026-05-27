@@ -61,7 +61,7 @@
             btnBajaTorneo = new ToolStripButton();
             toolStripSeparator12 = new ToolStripSeparator();
             cbFiltrado = new ComboBox();
-            cbEstado = new ComboBox();
+            cbEstados = new ComboBox();
             lblFiltrado = new Label();
             txtBusqueda = new TextBox();
             btnBuscar = new Button();
@@ -406,28 +406,30 @@
             // 
             cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltrado.FormattingEnabled = true;
-            cbFiltrado.Items.AddRange(new object[] { "nombre", "id" });
-            cbFiltrado.Location = new Point(339, 6);
+            cbFiltrado.Items.AddRange(new object[] { "nombre", "ID" });
+            cbFiltrado.Location = new Point(337, 6);
             cbFiltrado.Margin = new Padding(4, 3, 4, 3);
             cbFiltrado.Name = "cbFiltrado";
-            cbFiltrado.Size = new Size(98, 23);
+            cbFiltrado.Size = new Size(100, 23);
             cbFiltrado.TabIndex = 10;
+            cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
             // 
-            // cbEstado
+            // cbEstados
             // 
-            cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbEstado.FormattingEnabled = true;
-            cbEstado.Items.AddRange(new object[] { "Todos", "En juego", "Jugados", "Por jugar" });
-            cbEstado.Location = new Point(261, 6);
-            cbEstado.Margin = new Padding(4, 3, 4, 3);
-            cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(70, 23);
-            cbEstado.TabIndex = 12;
+            cbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbEstados.FormattingEnabled = true;
+            cbEstados.Items.AddRange(new object[] { "Todos", "En juego", "Jugados", "Por jugar" });
+            cbEstados.Location = new Point(229, 6);
+            cbEstados.Margin = new Padding(4, 3, 4, 3);
+            cbEstados.Name = "cbEstados";
+            cbEstados.Size = new Size(100, 23);
+            cbEstados.TabIndex = 12;
+            cbEstados.SelectedIndexChanged += cbEstados_SelectedIndexChanged;
             // 
             // lblFiltrado
             // 
             lblFiltrado.AutoSize = true;
-            lblFiltrado.Location = new Point(189, 10);
+            lblFiltrado.Location = new Point(157, 10);
             lblFiltrado.Name = "lblFiltrado";
             lblFiltrado.Size = new Size(65, 15);
             lblFiltrado.TabIndex = 18;
@@ -439,6 +441,7 @@
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 19;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // btnBuscar
             // 
@@ -458,7 +461,7 @@
             Controls.Add(btnBuscar);
             Controls.Add(txtBusqueda);
             Controls.Add(lblFiltrado);
-            Controls.Add(cbEstado);
+            Controls.Add(cbEstados);
             Controls.Add(cbFiltrado);
             Controls.Add(tcCompetencias);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -494,7 +497,7 @@
         private System.Windows.Forms.TabPage tabTorneos;
         private System.Windows.Forms.SplitContainer scTorneos;
         private System.Windows.Forms.SplitContainer scLigas;
-        private ComboBox cbEstado;
+        private ComboBox cbEstados;
         private ListBox listBoxLigas;
         private ListBox listBoxTorneos;
         private Label lblFiltrado;

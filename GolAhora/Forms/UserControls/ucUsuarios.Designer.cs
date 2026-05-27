@@ -136,6 +136,7 @@
             cbFiltrado.Name = "cbFiltrado";
             cbFiltrado.Size = new Size(103, 23);
             cbFiltrado.TabIndex = 6;
+            cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
             // 
             // txtBusqueda
             // 
@@ -143,6 +144,7 @@
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 7;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // btnBuscar
             // 

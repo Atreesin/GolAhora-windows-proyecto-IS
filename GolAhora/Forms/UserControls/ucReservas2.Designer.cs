@@ -45,6 +45,8 @@
             btnBuscar = new Button();
             lblFiltro = new Label();
             txtBusqueda = new TextBox();
+            btnReporte = new ToolStripButton();
+            toolStripSeparator6 = new ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)scReservas).BeginInit();
             scReservas.Panel1.SuspendLayout();
             scReservas.Panel2.SuspendLayout();
@@ -92,7 +94,7 @@
             lateralMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lateralMenu.GripMargin = new Padding(2, 2, 2, 5);
             lateralMenu.GripStyle = ToolStripGripStyle.Hidden;
-            lateralMenu.Items.AddRange(new ToolStripItem[] { toolStripSeparator4, btnReservar, toolStripSeparator1, btnConsultar, toolStripSeparator5, btnModificar, toolStripSeparator2, btnCancelar, toolStripSeparator3 });
+            lateralMenu.Items.AddRange(new ToolStripItem[] { toolStripSeparator4, btnReservar, toolStripSeparator1, btnReporte, toolStripSeparator6, btnConsultar, toolStripSeparator5, btnModificar, toolStripSeparator2, btnCancelar, toolStripSeparator3 });
             lateralMenu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             lateralMenu.Location = new Point(10, 10);
             lateralMenu.Name = "lateralMenu";
@@ -114,7 +116,7 @@
             btnReservar.Image = (Image)resources.GetObject("btnReservar.Image");
             btnReservar.ImageTransparentColor = Color.Magenta;
             btnReservar.Name = "btnReservar";
-            btnReservar.Size = new Size(231, 62);
+            btnReservar.Size = new Size(231, 48);
             btnReservar.Text = "Nueva reserva";
             btnReservar.Click += btnReservar_Click;
             // 
@@ -131,7 +133,7 @@
             btnConsultar.Image = (Image)resources.GetObject("btnConsultar.Image");
             btnConsultar.ImageTransparentColor = Color.Magenta;
             btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(231, 62);
+            btnConsultar.Size = new Size(231, 48);
             btnConsultar.Text = "Consultar reserva";
             btnConsultar.Click += btnConsultar_Click;
             // 
@@ -148,7 +150,7 @@
             btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
             btnModificar.ImageTransparentColor = Color.Magenta;
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(231, 62);
+            btnModificar.Size = new Size(231, 48);
             btnModificar.Text = "Modificar reserva";
             btnModificar.Click += btnModificar_Click;
             // 
@@ -165,7 +167,7 @@
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageTransparentColor = Color.Magenta;
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(231, 62);
+            btnCancelar.Size = new Size(231, 48);
             btnCancelar.Text = "Cancelar reserva";
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -184,6 +186,7 @@
             cbFiltrado.Name = "cbFiltrado";
             cbFiltrado.Size = new Size(103, 23);
             cbFiltrado.TabIndex = 10;
+            cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
             // 
             // btnBuscar
             // 
@@ -194,6 +197,7 @@
             btnBuscar.TabIndex = 19;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // lblFiltro
             // 
@@ -211,6 +215,23 @@
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 21;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
+            // 
+            // btnReporte
+            // 
+            btnReporte.AutoSize = false;
+            btnReporte.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            btnReporte.Image = (Image)resources.GetObject("btnReporte.Image");
+            btnReporte.ImageTransparentColor = Color.Magenta;
+            btnReporte.Name = "btnReporte";
+            btnReporte.Size = new Size(231, 48);
+            btnReporte.Text = "Generar reporte de reservas";
+            btnReporte.Click += btnReporte_Click;
+            // 
+            // toolStripSeparator6
+            // 
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new Size(231, 6);
             // 
             // ucReservas2
             // 
@@ -255,5 +276,7 @@
         private ToolStripSeparator toolStripSeparator5;
         private Label lblFiltro;
         private TextBox txtBusqueda;
+        private ToolStripButton btnReporte;
+        private ToolStripSeparator toolStripSeparator6;
     }
 }

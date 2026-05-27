@@ -15,6 +15,31 @@ namespace GolAhora.Forms.UserControls
             InitializeComponent();
         }
 
+        //
+        //Busqueda en la lista
+        //
+        private void ValidarCamposBusqueda(object sender, EventArgs e)
+        {
+            btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+                && (cbFiltrado.SelectedItem != null);
+        }
+
+
+        private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+
+        /*Botón de búsqueda*/
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //
+        //
+
         private void listBoxReservas_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool reservaSeleccionada = (listBoxReservas.SelectedIndex >= 0);
@@ -47,6 +72,18 @@ namespace GolAhora.Forms.UserControls
             newForm.ShowDialog();
         }
 
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            //limpiamos selección de la lista
+            listBoxReservas.ClearSelected();
+
+            MessageBox.Show(
+                "El reporte de reservas de cancha en el club se encuentra en proceso...",
+                "Reporte de tipos de cancha",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             Form newForm = new ConsultarReservaForm();
@@ -66,18 +103,18 @@ namespace GolAhora.Forms.UserControls
                 string reserva = listBoxReservas.SelectedItem.ToString();
                 DialogResult res = MessageBox.Show(
                     $"¿Seguro que desea dar de baja la reserva:\n{reserva}?\n\n" +
-                        "Se aplicará el reembolso automático correspondiente del club.", 
-                    "Baja de Reserva", 
-                    MessageBoxButtons.YesNo, 
+                        "Se aplicará el reembolso automático correspondiente del club.",
+                    "Baja de Reserva",
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning);
 
                 if (res == DialogResult.Yes)
                 {
                     listBoxReservas.Items.Remove(listBoxReservas.SelectedItem);
                     MessageBox.Show(
-                        "Reserva cancelada y reembolso emitido con éxito.", 
-                        "Éxito", 
-                        MessageBoxButtons.OK, 
+                        "Reserva cancelada y reembolso emitido con éxito.",
+                        "Éxito",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

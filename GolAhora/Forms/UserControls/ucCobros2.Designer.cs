@@ -60,6 +60,7 @@
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 31;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // scCobros
             // 
@@ -215,7 +216,7 @@
             // lblFiltro
             // 
             lblFiltro.AutoSize = true;
-            lblFiltro.Location = new Point(261, 10);
+            lblFiltro.Location = new Point(229, 9);
             lblFiltro.Margin = new Padding(4, 0, 4, 0);
             lblFiltro.Name = "lblFiltro";
             lblFiltro.Size = new Size(65, 15);
@@ -226,12 +227,13 @@
             // 
             cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltrado.FormattingEnabled = true;
-            cbFiltrado.Items.AddRange(new object[] { "Usuario", "Cancha" });
-            cbFiltrado.Location = new Point(334, 6);
+            cbFiltrado.Items.AddRange(new object[] { "Usuario", "Cancha", "Clase", "Entrenamiento" });
+            cbFiltrado.Location = new Point(302, 6);
             cbFiltrado.Margin = new Padding(4, 3, 4, 3);
             cbFiltrado.Name = "cbFiltrado";
-            cbFiltrado.Size = new Size(103, 23);
+            cbFiltrado.Size = new Size(135, 23);
             cbFiltrado.TabIndex = 27;
+            cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
             // 
             // ucCobros2
             // 

@@ -69,7 +69,7 @@
             btnBajaAlumnoEntrenamiento = new ToolStripButton();
             toolStripSeparator16 = new ToolStripSeparator();
             cbFiltrado = new ComboBox();
-            cbEstado = new ComboBox();
+            cbEstados = new ComboBox();
             txtBusqueda = new TextBox();
             lblFiltrado = new Label();
             btnBuscar = new Button();
@@ -481,22 +481,24 @@
             cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltrado.FormattingEnabled = true;
             cbFiltrado.Items.AddRange(new object[] { "Profesor", "Alumno" });
-            cbFiltrado.Location = new Point(339, 6);
+            cbFiltrado.Location = new Point(337, 6);
             cbFiltrado.Margin = new Padding(4, 3, 4, 3);
             cbFiltrado.Name = "cbFiltrado";
-            cbFiltrado.Size = new Size(98, 23);
+            cbFiltrado.Size = new Size(100, 23);
             cbFiltrado.TabIndex = 10;
+            cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
             // 
-            // cbEstado
+            // cbEstados
             // 
-            cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbEstado.FormattingEnabled = true;
-            cbEstado.Items.AddRange(new object[] { "Todos", "Actuales", "Pasados", "Futuros" });
-            cbEstado.Location = new Point(261, 6);
-            cbEstado.Margin = new Padding(4, 3, 4, 3);
-            cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(70, 23);
-            cbEstado.TabIndex = 11;
+            cbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbEstados.FormattingEnabled = true;
+            cbEstados.Items.AddRange(new object[] { "Todos", "Actuales", "Pasados", "Futuros" });
+            cbEstados.Location = new Point(229, 6);
+            cbEstados.Margin = new Padding(4, 3, 4, 3);
+            cbEstados.Name = "cbEstados";
+            cbEstados.Size = new Size(100, 23);
+            cbEstados.TabIndex = 11;
+            cbEstados.SelectedIndexChanged += cbEstados_SelectedIndexChanged;
             // 
             // txtBusqueda
             // 
@@ -504,11 +506,12 @@
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 17;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // lblFiltrado
             // 
             lblFiltrado.AutoSize = true;
-            lblFiltrado.Location = new Point(189, 10);
+            lblFiltrado.Location = new Point(157, 10);
             lblFiltrado.Name = "lblFiltrado";
             lblFiltrado.Size = new Size(65, 15);
             lblFiltrado.TabIndex = 18;
@@ -523,6 +526,7 @@
             btnBuscar.TabIndex = 35;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // ucCapacitaciones
             // 
@@ -532,7 +536,7 @@
             Controls.Add(btnBuscar);
             Controls.Add(lblFiltrado);
             Controls.Add(txtBusqueda);
-            Controls.Add(cbEstado);
+            Controls.Add(cbEstados);
             Controls.Add(cbFiltrado);
             Controls.Add(tcCapacitaciones);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -568,7 +572,7 @@
         private System.Windows.Forms.ComboBox cbFiltrado;
         private System.Windows.Forms.SplitContainer scEntrenamientos;
         private SplitContainer scClases;
-        private ComboBox cbEstado;
+        private ComboBox cbEstados;
         private ListBox listBoxClases;
         private ListBox listBoxEntrenamientos;
         private TextBox txtBusqueda;

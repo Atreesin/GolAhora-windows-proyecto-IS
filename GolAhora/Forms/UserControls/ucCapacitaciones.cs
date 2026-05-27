@@ -17,6 +17,31 @@ namespace GolAhora.Forms.UserControls
             InitializeComponent();
         }
 
+        //
+        //Busqueda en la lista
+        //
+        private void ValidarCamposBusqueda(object sender, EventArgs e)
+        {
+            btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+                && (cbFiltrado.SelectedItem != null || cbEstados.SelectedItem != null);
+        }
+
+        private void cbEstados_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+
+        /*Botón de búsqueda*/
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //
+        //
         private void listBoxClases_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool claseSeleccionada = (listBoxClases.SelectedIndex >= 0);
@@ -67,13 +92,9 @@ namespace GolAhora.Forms.UserControls
             listBoxEntrenamientos.ClearSelected();
         }
 
-
-        /*Botones del panel*/
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //
+        //Botones del panel
+        //
 
         /*Botones de la pestaña clases*/
         private void btnRegistrarClase_Click(object sender, EventArgs e)
@@ -111,6 +132,12 @@ namespace GolAhora.Forms.UserControls
 
         private void btnReporteAsistenciaClase_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(
+                "El reporte de asistencias a clases se encuentra en proceso...",
+                "Reporte de tipos de cancha",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            
             Form newForm = new ReporteAsistenciaClaseForm();
             newForm.ShowDialog();
         }
@@ -157,6 +184,12 @@ namespace GolAhora.Forms.UserControls
 
         private void btnReporteAsistenciaEntrenamiento_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(
+                "El reporte de asistencias a entrenamientos se encuentra en proceso...",
+                "Reporte de tipos de cancha",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
             Form newForm = new ReporteAsistenciaEntrenamientoForm();
             newForm.ShowDialog();
         }

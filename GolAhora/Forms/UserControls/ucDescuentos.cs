@@ -14,6 +14,31 @@ namespace GolAhora.Forms.UserControls
         {
             InitializeComponent();
         }
+        
+        //
+        //Busqueda en la lista
+        //
+        private void ValidarCamposBusqueda(object sender, EventArgs e)
+        {
+            btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+                && (cbFiltrado.SelectedItem != null);
+        }
+
+
+        private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+
+        /*Botón de búsqueda*/
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //
+        //
 
         private void listBoxDescuentos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -36,12 +61,9 @@ namespace GolAhora.Forms.UserControls
             listBoxDescuentos.ClearSelected();
         }
 
-
-        /*Botones del panel*/
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
+        //
+        //Botones del panel
+        //
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -68,8 +90,8 @@ namespace GolAhora.Forms.UserControls
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "¿Está seguro que desea eliminar este descuento?", 
-                "Confirmar eliminación", 
+                "¿Está seguro que desea eliminar este descuento?",
+                "Confirmar eliminación",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
         }

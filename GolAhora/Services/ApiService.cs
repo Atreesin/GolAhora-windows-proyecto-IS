@@ -11,7 +11,7 @@ namespace GolAhora.Services
     {
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri("http://localhost/api/")
+            BaseAddress = new Uri("https://golahora-proyecto-is.onrender.com/api/")
         };
 
         static ApiService()
@@ -48,6 +48,38 @@ namespace GolAhora.Services
                 var errorContent = await response.Content.ReadAsStringAsync();
                 var error = JsonNode.Parse(errorContent);
                 MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error de Inicio de Sesión");
+                return null;
+            }
+        }
+
+        public async Task<string> GetClubDataAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("clubes/club_id=1/full_info");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos del usuario");
                 return null;
             }
         }

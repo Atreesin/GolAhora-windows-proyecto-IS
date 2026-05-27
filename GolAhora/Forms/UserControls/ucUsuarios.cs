@@ -17,6 +17,31 @@ namespace GolAhora.Forms.UserControls
             InitializeComponent();
         }
 
+        //
+        //Busqueda en la lista
+        //
+        private void ValidarCamposBusqueda(object sender, EventArgs e)
+        {
+            btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+                && (cbFiltrado.SelectedItem != null);
+        }
+
+
+        private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+
+        /*Botón de búsqueda*/
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //
+        //
+
         private void listBoxUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool usuarioSeleccionado = (listBoxUsuarios.SelectedIndex >= 0);
@@ -118,94 +143,91 @@ namespace GolAhora.Forms.UserControls
             listBoxAdministradores.ClearSelected();
         }
 
-        /*Botones del panel*/
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-        /*Botones de la pestaña todos*/
+        //
+        //Botones del panel
+        //
 
         /*Botones de la pestaña clientes*/
-         private void btnRegistrarCliente_Click(object sender, EventArgs e)
-         {
-             //limpiamos selección de las lista
-             CleanSelected();
+        private void btnRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            //limpiamos selección de las lista
+            CleanSelected();
 
-             Form newForm = new RegistrarClienteForm();
-             newForm.ShowDialog();
-         }
+            Form newForm = new RegistrarClienteForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnConsultarCliente_Click(object sender, EventArgs e)
-         {
-             Form newForm = new ConsultarClienteForm();
-             newForm.ShowDialog();
-         }
+        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        {
+            Form newForm = new ConsultarClienteForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnModificarCliente_Click(object sender, EventArgs e)
-         {
-             Form newForm = new ModificarClienteForm();
-             newForm.ShowDialog();
-         }
+        private void btnModificarCliente_Click(object sender, EventArgs e)
+        {
+            Form newForm = new ModificarClienteForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnImprimirCliente_Click(object sender, EventArgs e)
-         {
-             MessageBox.Show(
-                 $"La impresión de los datos del cliente <<xxx>> está en proceso...",
-                 "Imprimir datos de cliente",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
-         }
+        private void btnImprimirCliente_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                $"La impresión de los datos del cliente <<xxx>> está en proceso...",
+                "Imprimir datos de cliente",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
 
-         private void btnBajaCliente_Click(object sender, EventArgs e)
-         {
-             MessageBox.Show(
-                 $"¿Seguro que deseas dar de baja del sistema al cliente <<xxx>>?",
-                 "Confirmar baja de cliente",
-                 MessageBoxButtons.YesNo,
-                 MessageBoxIcon.Question);
-         }
-        
+        private void btnBajaCliente_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                $"¿Seguro que deseas dar de baja del sistema al cliente <<xxx>>?",
+                "Confirmar baja de cliente",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+        }
+
 
         /*Botones de la pestaña profesores*/
-         private void btnRegistrarProfesor_Click(object sender, EventArgs e)
-         {
-             //limpiamos selección de las lista
-             CleanSelected();
+        private void btnRegistrarProfesor_Click(object sender, EventArgs e)
+        {
+            //limpiamos selección de las lista
+            CleanSelected();
 
-             Form newForm = new RegistrarProfesorForm();
-             newForm.ShowDialog();
-         }
+            Form newForm = new RegistrarProfesorForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnConsultarProfesor_Click(object sender, EventArgs e)
-         {
-             Form newForm = new ConsultarProfesorForm();
-             newForm.ShowDialog();
-         }
+        private void btnConsultarProfesor_Click(object sender, EventArgs e)
+        {
+            Form newForm = new ConsultarProfesorForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnModificarProfesor_Click(object sender, EventArgs e)
-         {
-             Form newForm = new ModificarProfesorForm();
-             newForm.ShowDialog();
-         }
+        private void btnModificarProfesor_Click(object sender, EventArgs e)
+        {
+            Form newForm = new ModificarProfesorForm();
+            newForm.ShowDialog();
+        }
 
-         private void btnImprimirProfesor_Click(object sender, EventArgs e)
-         {
-             MessageBox.Show(
-                 $"La impresión de los datos del profesor <<xxx>> está en proceso...",
-                 "Imprimir datos de profesor",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
-         }
+        private void btnImprimirProfesor_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                $"La impresión de los datos del profesor <<xxx>> está en proceso...",
+                "Imprimir datos de profesor",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
 
-         private void btnBajaProfesor_Click(object sender, EventArgs e)
-         {
-             MessageBox.Show(
-                 $"¿Seguro que deseas dar de baja del sistema al profesor <<xxx>>?",
-                 "Confirmar baja de profesor",
-                 MessageBoxButtons.YesNo,
-                 MessageBoxIcon.Question);
-         }
-         
+        private void btnBajaProfesor_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                $"¿Seguro que deseas dar de baja del sistema al profesor <<xxx>>?",
+                "Confirmar baja de profesor",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+        }
+
 
         /*Botones de la pestaña entrenadores*/
         private void btnRegistrarEntrenador_Click(object sender, EventArgs e)
@@ -247,7 +269,7 @@ namespace GolAhora.Forms.UserControls
                 MessageBoxIcon.Question);
         }
 
-        
+
         /*Botones de la pestaña administradores*/
         private void btnRegistrarAdmin_Click(object sender, EventArgs e)
         {

@@ -17,6 +17,31 @@ namespace GolAhora.Forms.UserControls
             InitializeComponent();
         }
 
+        //
+        //Busqueda en la lista
+        //
+        private void ValidarCamposBusqueda(object sender, EventArgs e)
+        {
+            btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
+                && (cbFiltrado.SelectedItem != null);
+        }
+
+
+        private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+
+
+        /*Botón de búsqueda*/
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //
+        //
+
         private void listBoxRecibos_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool reciboSeleccionado = (listBoxRecibos.SelectedIndex >= 0);
@@ -39,12 +64,9 @@ namespace GolAhora.Forms.UserControls
             listBoxRecibos.ClearSelected();
         }
 
-
-        /*Botones del panel*/
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
+        //
+        //Botones del panel*/
+        //
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
