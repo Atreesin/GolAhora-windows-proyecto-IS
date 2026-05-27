@@ -10,20 +10,21 @@ namespace GolAhora.Models
         public string? Username { get; set; }
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
-        public int Nacionalidad { get; set; }
+        public string? Nacionalidad { get; set; }
         public string? Dni { get; set; }
         public string? Genero { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
         public string? Telefono { get; set; }
         public string? Email { get; set; }
-        public int User_Level { get; set; }
+        public string? User_Level { get; set; }
         public DateTime Fecha_Registro { get; set; }
+        public string? Club { get; set; }
 
         //Constructors
         public Usuario() { }
-        public Usuario(int id, string username, string nombre, string apellido, int nacionalidad,
+        public Usuario(int id, string username, string nombre, string apellido, string nacionalidad,
                         string dni, string genero, DateTime fecha_Nacimiento, string telefono, string email, 
-                        int user_Level, DateTime fecha_Registro)
+                        string user_Level, DateTime fecha_Registro, string club)
         {
             Id = id;
             Username = username;
@@ -37,6 +38,10 @@ namespace GolAhora.Models
             Email = email;
             User_Level = user_Level;
             Fecha_Registro = fecha_Registro;
+            Club = club;
         }
+
+        //methods
+        public override string ToString() => $"{Nombre?.ToLower()} {Apellido?.ToLower()} [dni: {Dni}] - rol: {User_Level?.ToLower()} - email: {Email?.ToLower()}";
     }
 }

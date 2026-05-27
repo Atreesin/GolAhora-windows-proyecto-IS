@@ -11,11 +11,11 @@ namespace GolAhora.Models
 
         //constructors
         public Cliente() { }
-        public Cliente(int id, string username, string nombre, string apellido, int nacionalidad, string dni, 
+        public Cliente(int id, string username, string nombre, string apellido, string nacionalidad, string dni, 
             string genero, DateTime fecha_Nacimiento, string telefono, string email, string password, 
-            int user_Level, DateTime fecha_Registro)
+            string user_Level, DateTime fecha_Registro, string club)
             : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento, telefono, 
-                  email, user_Level, fecha_Registro)
+                  email, user_Level, fecha_Registro, club)
         {
         }
     }

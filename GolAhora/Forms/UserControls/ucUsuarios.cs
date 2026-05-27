@@ -7,14 +7,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GolAhora.Models;
+using GolAhora.Services;
 
 namespace GolAhora.Forms.UserControls
 {
     public partial class ucUsuarios : UserControl
     {
+        //variables
+        private ApiService apiService = new ApiService();
+
+        private List<Cliente> clientes = new();
+        private List<Profesor> profesores = new();
+        private List<Entrenador> entrenadores = new();
+        private List<Administrador> administradores = new();
+        private List<Usuario> usuarios= new();
+
+        //constructor
         public ucUsuarios()
         {
             InitializeComponent();
+        }
+
+
+        /*Carga del control de usuarios*/
+        private async void ucUsuarios_Load(object sender, EventArgs e)
+        {
+            clientes = await apiService.GetClientsAsync();
+            profesores = await apiService.GetTeachersAsync();
+            entrenadores = await apiService.GetTrainersAsync();
+            //administradores = await apiService.GetAdminsAsync();
+            usuarios = await apiService.GetUsersAsync();
+
+            if (clientes is not null)
+            {
+                listBoxClientes.DataSource = clientes;
+                listBoxClientes.SelectedIndex = -1;
+            }
+            if (profesores is not null)
+            {
+                listBoxProfesores.DataSource = profesores;
+                listBoxProfesores.SelectedIndex = -1;
+            }
+            if (entrenadores is not null)
+            {
+                listBoxEntrenadores.DataSource = entrenadores;
+                listBoxEntrenadores.SelectedIndex = -1;
+            }
+            if (administradores is not null)
+            {
+                listBoxAdministradores.DataSource = administradores;
+                listBoxAdministradores.SelectedIndex = -1;
+            }
+            if (usuarios is not null)
+            {
+                listBoxUsuarios.DataSource = usuarios;
+                listBoxUsuarios.SelectedIndex = -1;
+            }
+
+            
         }
 
         //

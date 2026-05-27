@@ -19,10 +19,10 @@ namespace GolAhora.Models
             Apellido = apellido;
             Email = email;
         }
-        public Profesional(int id, string username, string nombre, string apellido, int nacionalidad,
+        public Profesional(int id, string username, string nombre, string apellido, string nacionalidad,
                         string dni, string genero, DateTime fecha_Nacimiento, string telefono, string email,
-                        int user_Level, DateTime fecha_Registro, Certificacion certificacion)
-            : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento, telefono, email, user_Level, fecha_Registro)
+                        string user_Level, DateTime fecha_Registro, string club, Certificacion certificacion)
+            : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento, telefono, email, user_Level, fecha_Registro, club)
         {
             CertificacionObjeto = certificacion;
         }
