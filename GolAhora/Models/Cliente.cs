@@ -4,7 +4,19 @@ using System.Text;
 
 namespace GolAhora.Models
 {
-    internal class Cliente
+    public class Cliente : Usuario
     {
+        //variables
+        public List<ReservaCancha> ListaDeReservas { get; set; } = new();
+
+        //constructors
+        public Cliente() { }
+        public Cliente(int id, string username, string nombre, string apellido, int nacionalidad, string dni, 
+            string genero, DateTime fecha_Nacimiento, string telefono, string email, string password, 
+            int user_Level, DateTime fecha_Registro)
+            : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento, telefono, 
+                  email, user_Level, fecha_Registro)
+        {
+        }
     }
 }

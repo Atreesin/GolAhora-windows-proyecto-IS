@@ -60,7 +60,7 @@
             // btnRegistrar
             // 
             btnRegistrar.Enabled = false;
-            btnRegistrar.Location = new Point(285, 266);
+            btnRegistrar.Location = new Point(297, 266);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(75, 23);
             btnRegistrar.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             // txtNombreCancha
             // 
-            txtNombreCancha.Location = new Point(174, 19);
+            txtNombreCancha.Location = new Point(173, 19);
             txtNombreCancha.Name = "txtNombreCancha";
             txtNombreCancha.Size = new Size(186, 23);
             txtNombreCancha.TabIndex = 2;
@@ -80,19 +80,19 @@
             // 
             lblTipoCancha.AutoSize = true;
             lblTipoCancha.ImageAlign = ContentAlignment.BottomRight;
-            lblTipoCancha.Location = new Point(11, 101);
+            lblTipoCancha.Location = new Point(75, 101);
             lblTipoCancha.Name = "lblTipoCancha";
-            lblTipoCancha.Size = new Size(93, 15);
+            lblTipoCancha.Size = new Size(92, 15);
             lblTipoCancha.TabIndex = 5;
-            lblTipoCancha.Text = "tipo de cancha: ";
+            lblTipoCancha.Text = "Tipo de cancha:";
             // 
             // cbTipoCancha
             // 
             cbTipoCancha.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipoCancha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbTipoCancha.FormattingEnabled = true;
-            cbTipoCancha.Items.AddRange(new object[] { "Cancha de 5", "Cancha de 7", "Cancha de 11" });
-            cbTipoCancha.Location = new Point(174, 98);
+            cbTipoCancha.Items.AddRange(new object[] { "Cancha de 5", "Cancha de 7", "Cancha de 11", "", "--Esto lo llena la api" });
+            cbTipoCancha.Location = new Point(173, 98);
             cbTipoCancha.Name = "cbTipoCancha";
             cbTipoCancha.Size = new Size(186, 23);
             cbTipoCancha.TabIndex = 6;
@@ -101,26 +101,26 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 160);
+            label1.Location = new Point(12, 170);
             label1.Name = "label1";
-            label1.Size = new Size(327, 15);
+            label1.Size = new Size(182, 15);
             label1.TabIndex = 7;
-            label1.Text = "Rango en el que se encontrará disponible la nueva cancha:";
+            label1.Text = "Rango de disponibilidad horaria:";
             // 
             // lblNuevoTipo
             // 
             lblNuevoTipo.AutoSize = true;
             lblNuevoTipo.ForeColor = Color.SteelBlue;
-            lblNuevoTipo.Location = new Point(11, 124);
+            lblNuevoTipo.Location = new Point(12, 124);
             lblNuevoTipo.Name = "lblNuevoTipo";
-            lblNuevoTipo.Size = new Size(254, 15);
+            lblNuevoTipo.Size = new Size(259, 15);
             lblNuevoTipo.TabIndex = 8;
-            lblNuevoTipo.Text = "Necesitas registrar un nuevo tipo de cancha?";
+            lblNuevoTipo.Text = "¿Necesitas registrar un nuevo tipo de cancha?";
             // 
             // linkLblNuevoTipo
             // 
             linkLblNuevoTipo.AutoSize = true;
-            linkLblNuevoTipo.Location = new Point(280, 124);
+            linkLblNuevoTipo.Location = new Point(277, 124);
             linkLblNuevoTipo.Name = "linkLblNuevoTipo";
             linkLblNuevoTipo.Size = new Size(82, 15);
             linkLblNuevoTipo.TabIndex = 9;
@@ -134,7 +134,7 @@
             cbHoraInicio.DropDownStyle = ComboBoxStyle.DropDownList;
             cbHoraInicio.FormattingEnabled = true;
             cbHoraInicio.Items.AddRange(new object[] { "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM", "12:00 PM", "01:00 AM", "02:00 AM" });
-            cbHoraInicio.Location = new Point(56, 187);
+            cbHoraInicio.Location = new Point(259, 167);
             cbHoraInicio.Name = "cbHoraInicio";
             cbHoraInicio.Size = new Size(100, 23);
             cbHoraInicio.TabIndex = 10;
@@ -143,29 +143,29 @@
             // lblNombreCancha
             // 
             lblNombreCancha.AutoSize = true;
-            lblNombreCancha.Location = new Point(12, 22);
+            lblNombreCancha.Location = new Point(111, 22);
             lblNombreCancha.Name = "lblNombreCancha";
-            lblNombreCancha.Size = new Size(127, 15);
+            lblNombreCancha.Size = new Size(56, 15);
             lblNombreCancha.TabIndex = 3;
-            lblNombreCancha.Text = "nombre de la cancha: ";
+            lblNombreCancha.Text = "Nombre:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 190);
+            label2.Location = new Point(208, 170);
             label2.Name = "label2";
-            label2.Size = new Size(42, 15);
+            label2.Size = new Size(45, 15);
             label2.TabIndex = 11;
-            label2.Text = "Desde";
+            label2.Text = "Desde:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(217, 190);
+            label3.Location = new Point(212, 211);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(41, 15);
             label3.TabIndex = 12;
-            label3.Text = "Hasta";
+            label3.Text = "Hasta:";
             // 
             // cbHoraFin
             // 
@@ -173,7 +173,7 @@
             cbHoraFin.DropDownStyle = ComboBoxStyle.DropDownList;
             cbHoraFin.FormattingEnabled = true;
             cbHoraFin.Items.AddRange(new object[] { "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM", "12:00 PM", "01:00 AM", "02:00 AM" });
-            cbHoraFin.Location = new Point(260, 187);
+            cbHoraFin.Location = new Point(259, 208);
             cbHoraFin.Name = "cbHoraFin";
             cbHoraFin.Size = new Size(100, 23);
             cbHoraFin.TabIndex = 13;
@@ -182,26 +182,26 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(11, 62);
+            label4.Location = new Point(12, 62);
             label4.Name = "label4";
-            label4.Size = new Size(162, 15);
+            label4.Size = new Size(155, 15);
             label4.TabIndex = 15;
-            label4.Text = "Capacidad de espectadores: ";
+            label4.Text = "Plazo de cancelación (min):";
             // 
             // nudCapacidad
             // 
-            nudCapacidad.Location = new Point(174, 60);
+            nudCapacidad.Location = new Point(173, 60);
             nudCapacidad.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudCapacidad.Name = "nudCapacidad";
             nudCapacidad.Size = new Size(186, 23);
             nudCapacidad.TabIndex = 16;
             // 
-            // RegistroDeCanchaForm
+            // RegistrarCanchaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(374, 301);
+            ClientSize = new Size(384, 301);
             Controls.Add(nudCapacidad);
             Controls.Add(label4);
             Controls.Add(cbHoraFin);
@@ -220,9 +220,9 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(390, 340);
-            MinimumSize = new Size(390, 340);
-            Name = "RegistroDeCanchaForm";
+            MaximumSize = new Size(400, 340);
+            MinimumSize = new Size(400, 340);
+            Name = "RegistrarCanchaForm";
             Text = "Gol Ahora - Registrar Cancha";
             ((System.ComponentModel.ISupportInitialize)nudCapacidad).EndInit();
             ResumeLayout(false);

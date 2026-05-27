@@ -7,7 +7,7 @@ namespace GolAhora.Models
     public class Club
     {
         //variables
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public string? Nombre { get; set; }
         public string? Cuit { get; set; }
         public string? Telefono { get; set; }
@@ -45,5 +45,10 @@ namespace GolAhora.Models
             Provincia = provincia;
             Pais = pais;
         }
+
+        //methods
+        //
+        //
+        //
     }
 }
