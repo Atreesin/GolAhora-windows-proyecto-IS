@@ -8,13 +8,11 @@ namespace GolAhora.Models
     {
         //constructors
         public Entrenador() { }
-        public Entrenador(int id, string username, string nombre, string apellido, string nacionalidad,
-                        string dni, string genero, DateTime fecha_Nacimiento, string telefono, string email,
-                        string user_Level, DateTime fecha_Registro, string club, Certificacion certificacion)
-            : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento,
-                  telefono, email, user_Level, fecha_Registro, club, certificacion)
-        {
-            CertificacionObjeto = certificacion;
-        }
+        public Entrenador(int id_usuario, string username, string nombre, string apellido, string dni, string nacionalidad,
+            string genero, DateTime fecha_Nacimiento, string email, string telefono, DateTime fecha_Registro,
+            Direccion direccion, Club club, string user_Level, Certificacion certificacion)
+            : base(id_usuario, username, nombre, apellido, dni, nacionalidad, genero, fecha_Nacimiento, email, telefono,
+                  fecha_Registro, direccion, club, user_Level, certificacion)
+        { }
     }
 }

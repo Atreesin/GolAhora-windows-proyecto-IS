@@ -208,10 +208,22 @@ namespace GolAhora.Forms.UserControls
             newForm.ShowDialog();
         }
 
-        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        private async void btnConsultarCliente_Click(object sender, EventArgs e)
         {
-            Form newForm = new ConsultarClienteForm();
-            newForm.ShowDialog();
+            if (listBoxClientes.SelectedIndex >= 0 && listBoxClientes.SelectedItem is Cliente clienteResumido)
+            {
+                btnConsultarCliente.Enabled = false;
+                Cliente clienteCompleto = (Cliente)await apiService.GetUserByIdAsync(clienteResumido.Id_Usuario);
+                btnConsultarCliente.Enabled = true;
+
+                if (clienteCompleto is not null)
+                {
+                    Form newForm = new ConsultarClienteForm(clienteCompleto);
+                    newForm.ShowDialog();
+
+                    CleanSelected();
+                }
+            }
         }
 
         private void btnModificarCliente_Click(object sender, EventArgs e)
@@ -249,10 +261,22 @@ namespace GolAhora.Forms.UserControls
             newForm.ShowDialog();
         }
 
-        private void btnConsultarProfesor_Click(object sender, EventArgs e)
+        private async void btnConsultarProfesor_Click(object sender, EventArgs e)
         {
-            Form newForm = new ConsultarProfesorForm();
-            newForm.ShowDialog();
+            if (listBoxProfesores.SelectedIndex >= 0 && listBoxProfesores.SelectedItem is Profesor profeResumido)
+            {
+                btnConsultarProfesor.Enabled = false;
+                Profesor profeCompleto = (Profesor)await apiService.GetUserByIdAsync(profeResumido.Id_Usuario);
+                btnConsultarProfesor.Enabled = true;
+
+                if (profeCompleto is not null)
+                {
+                    Form newForm = new ConsultarProfesorForm(profeCompleto);
+                    newForm.ShowDialog();
+
+                    CleanSelected();
+                }
+            }
         }
 
         private void btnModificarProfesor_Click(object sender, EventArgs e)
@@ -290,10 +314,22 @@ namespace GolAhora.Forms.UserControls
             newForm.ShowDialog();
         }
 
-        private void btnConsultarEntrenador_Click(object sender, EventArgs e)
+        private async void btnConsultarEntrenador_Click(object sender, EventArgs e)
         {
-            Form newForm = new ConsultarEntrenadorForm();
-            newForm.ShowDialog();
+            if (listBoxEntrenadores.SelectedIndex >= 0 && listBoxEntrenadores.SelectedItem is Entrenador entrenadorResumido)
+            {
+                btnConsultarEntrenador.Enabled = false;
+                Entrenador entrenadorCompleto = (Entrenador)await apiService.GetUserByIdAsync(entrenadorResumido.Id_Usuario);
+                btnConsultarEntrenador.Enabled = true;
+
+                if (entrenadorCompleto is not null)
+                {
+                    Form newForm = new ConsultarEntrenadorForm(entrenadorCompleto);
+                    newForm.ShowDialog();
+
+                    CleanSelected();
+                }
+            }
         }
 
         private void btnModificarEntrenador_Click(object sender, EventArgs e)
@@ -331,10 +367,22 @@ namespace GolAhora.Forms.UserControls
             newForm.ShowDialog();
         }
 
-        private void btnConsultarAdmin_Click(object sender, EventArgs e)
+        private async void btnConsultarAdmin_Click(object sender, EventArgs e)
         {
-            Form newForm = new ConsultarAdministradorForm();
-            newForm.ShowDialog();
+            if (listBoxAdministradores.SelectedIndex >= 0 && listBoxAdministradores.SelectedItem is Administrador adminResumido)
+            {
+                btnConsultarAdmin.Enabled = false;
+                Administrador adminCompleto = (Administrador)await apiService.GetUserByIdAsync(adminResumido.Id_Usuario);
+                btnConsultarAdmin.Enabled = true;
+
+                if (adminCompleto is not null)
+                {
+                    Form newForm = new ConsultarAdministradorForm(adminCompleto);
+                    newForm.ShowDialog();
+
+                    CleanSelected();
+                }
+            }
         }
 
         private void btnModificarAdmin_Click(object sender, EventArgs e)

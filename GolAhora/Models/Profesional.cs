@@ -7,24 +7,25 @@ namespace GolAhora.Models
     public abstract class Profesional : Usuario
     {
         //variables
-        public Certificacion? CertificacionObjeto { get; set; }
+        public Certificacion? Certificacion { get; set; }
 
         //constructors
         public Profesional() { }
-        public Profesional(int id, string username, string nombre, string apellido, string email)
+        public Profesional(int id_usuario, string username, string nombre, string apellido, string email)
         {
-            Id = id;
+            Id_Usuario = id_usuario;
             Username = username;
             Nombre = nombre;
             Apellido = apellido;
             Email = email;
         }
-        public Profesional(int id, string username, string nombre, string apellido, string nacionalidad,
-                        string dni, string genero, DateTime fecha_Nacimiento, string telefono, string email,
-                        string user_Level, DateTime fecha_Registro, string club, Certificacion certificacion)
-            : base(id, username, nombre, apellido, nacionalidad, dni, genero, fecha_Nacimiento, telefono, email, user_Level, fecha_Registro, club)
+        public Profesional(int id_usuario, string username, string nombre, string apellido, string dni, string nacionalidad,
+            string genero, DateTime fecha_Nacimiento, string email, string telefono, DateTime fecha_Registro,
+            Direccion direccion, Club club, string user_Level, Certificacion certificacion)
+            : base(id_usuario, username, nombre, apellido, dni, nacionalidad, genero, fecha_Nacimiento, email, telefono,
+                  fecha_Registro, direccion, club, user_Level)
         {
-            CertificacionObjeto = certificacion;
+            Certificacion = certificacion;
         }
     }
 }

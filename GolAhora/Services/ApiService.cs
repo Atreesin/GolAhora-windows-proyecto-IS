@@ -125,6 +125,37 @@ namespace GolAhora.Services
             }
         }
 
+        public async Task<Usuario> GetUserByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"users/user_id={id}/full_info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Usuario user = JsonSerializer.Deserialize<Usuario>(jsonString, opciones);
+                    return user;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
 
         public async Task<List<Usuario>> GetUsersAsync()
         {

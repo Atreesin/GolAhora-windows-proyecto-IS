@@ -35,6 +35,8 @@
             toolStripSeparator4 = new ToolStripSeparator();
             btnReservar = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
+            btnReporte = new ToolStripButton();
+            toolStripSeparator6 = new ToolStripSeparator();
             btnConsultar = new ToolStripButton();
             toolStripSeparator5 = new ToolStripSeparator();
             btnModificar = new ToolStripButton();
@@ -45,8 +47,6 @@
             btnBuscar = new Button();
             lblFiltro = new Label();
             txtBusqueda = new TextBox();
-            btnReporte = new ToolStripButton();
-            toolStripSeparator6 = new ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)scReservas).BeginInit();
             scReservas.Panel1.SuspendLayout();
             scReservas.Panel2.SuspendLayout();
@@ -78,7 +78,6 @@
             listBoxReservas.BorderStyle = BorderStyle.FixedSingle;
             listBoxReservas.Dock = DockStyle.Fill;
             listBoxReservas.FormattingEnabled = true;
-            listBoxReservas.Items.AddRange(new object[] { "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs", "id: An5ss4pq0 - cliente: totoro gigante - cancha: segunda B - duracion: 2 hs" });
             listBoxReservas.Location = new Point(10, 10);
             listBoxReservas.Name = "listBoxReservas";
             listBoxReservas.Size = new Size(438, 301);
@@ -124,6 +123,22 @@
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(231, 6);
+            // 
+            // btnReporte
+            // 
+            btnReporte.AutoSize = false;
+            btnReporte.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            btnReporte.Image = (Image)resources.GetObject("btnReporte.Image");
+            btnReporte.ImageTransparentColor = Color.Magenta;
+            btnReporte.Name = "btnReporte";
+            btnReporte.Size = new Size(231, 48);
+            btnReporte.Text = "Generar reporte de reservas";
+            btnReporte.Click += btnReporte_Click;
+            // 
+            // toolStripSeparator6
+            // 
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new Size(231, 6);
             // 
             // btnConsultar
             // 
@@ -216,22 +231,6 @@
             txtBusqueda.Size = new Size(174, 23);
             txtBusqueda.TabIndex = 21;
             txtBusqueda.TextChanged += txtBusqueda_TextChanged;
-            // 
-            // btnReporte
-            // 
-            btnReporte.AutoSize = false;
-            btnReporte.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            btnReporte.Image = (Image)resources.GetObject("btnReporte.Image");
-            btnReporte.ImageTransparentColor = Color.Magenta;
-            btnReporte.Name = "btnReporte";
-            btnReporte.Size = new Size(231, 48);
-            btnReporte.Text = "Generar reporte de reservas";
-            btnReporte.Click += btnReporte_Click;
-            // 
-            // toolStripSeparator6
-            // 
-            toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(231, 6);
             // 
             // ucReservas2
             // 

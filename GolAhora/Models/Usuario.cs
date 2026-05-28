@@ -6,39 +6,41 @@ namespace GolAhora.Models
 {
     public class Usuario
     {
-        public int Id { get; set; }
+        public int Id_Usuario { get; set; }
         public string? Username { get; set; }
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
-        public string? Nacionalidad { get; set; }
         public string? Dni { get; set; }
+        public string? Nacionalidad { get; set; }
         public string? Genero { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
-        public string? Telefono { get; set; }
         public string? Email { get; set; }
-        public string? User_Level { get; set; }
+        public string? Telefono { get; set; }
         public DateTime Fecha_Registro { get; set; }
-        public string? Club { get; set; }
+        public Direccion? Direccion { get; set; }
+        public Club? Club { get; set; }
+        public string? User_Level { get; set; }
 
         //Constructors
         public Usuario() { }
-        public Usuario(int id, string username, string nombre, string apellido, string nacionalidad,
-                        string dni, string genero, DateTime fecha_Nacimiento, string telefono, string email, 
-                        string user_Level, DateTime fecha_Registro, string club)
+        public Usuario(int id_usuario, string username, string nombre, string apellido, string dni, string nacionalidad, 
+            string genero, DateTime fecha_Nacimiento, string email, string telefono, DateTime fecha_Registro, 
+            Direccion direccion, Club club, string user_Level)
         {
-            Id = id;
+            Id_Usuario = id_usuario;
             Username = username;
             Nombre = nombre;
             Apellido = apellido;
-            Nacionalidad = nacionalidad;
             Dni = dni;
+            Nacionalidad = nacionalidad;
             Genero = genero;
             Fecha_Nacimiento = fecha_Nacimiento;
-            Telefono = telefono;
             Email = email;
-            User_Level = user_Level;
+            Telefono = telefono;
             Fecha_Registro = fecha_Registro;
+            Direccion = direccion;
             Club = club;
+            User_Level = user_Level;
         }
 
         //methods

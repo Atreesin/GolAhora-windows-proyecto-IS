@@ -6,25 +6,27 @@ namespace GolAhora.Models
 {
     public class Direccion
     {
-        private int id;
-        private string calle;
-        private string numero;
-        private int codigoPostal;
-        private int idLocalidad;
+        public int Id {  get; set; }
+        public string? Calle {  get; set; }
+        public string? Numero { get; set; }
+        public string? Cp { get; set; }
+        public string? Localidad { get; set; }
+        public string? Ciudad { get; set; }
+        public string? Provincia { get; set; }
+        public string? Pais { get; set; }
 
-        public Direccion(int id, string calle, string numero, int idLocalidad)
+        //constructors
+        public Direccion() { }
+        public Direccion(string calle, string numero, string cp, string localidad, string ciudad, string provincia, string pais)
         {
-            this.id = id;
-            this.calle = calle;
-            this.numero = numero;
-            this.idLocalidad = idLocalidad;
+            Calle = calle;
+            Numero = numero;
+            Cp = cp;
+            Localidad = localidad;
+            Ciudad = ciudad;
+            Provincia = provincia;
+            Pais = pais;
         }
-
-        public int Id { get => id; set => id = value; }
-        public string Calle { get => calle; set => calle = value; }
-        public string Numero { get => numero; set => numero = value; }
-        public int CodigoPostal { get => codigoPostal; set => codigoPostal = value; }
-        public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
 
     }
 }

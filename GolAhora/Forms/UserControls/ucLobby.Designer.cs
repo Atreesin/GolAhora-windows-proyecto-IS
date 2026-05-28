@@ -84,7 +84,6 @@
             // 
             scInicioPanel.BorderStyle = BorderStyle.FixedSingle;
             scInicioPanel.Dock = DockStyle.Fill;
-            scInicioPanel.IsSplitterFixed = true;
             scInicioPanel.Location = new Point(10, 10);
             scInicioPanel.Name = "scInicioPanel";
             // 
@@ -97,7 +96,7 @@
             // 
             scInicioPanel.Panel2.Controls.Add(scAdmin);
             scInicioPanel.Size = new Size(703, 401);
-            scInicioPanel.SplitterDistance = 422;
+            scInicioPanel.SplitterDistance = 347;
             scInicioPanel.SplitterWidth = 10;
             scInicioPanel.TabIndex = 1;
             scInicioPanel.TabStop = false;
@@ -130,7 +129,7 @@
             gbInfoClub.Dock = DockStyle.Fill;
             gbInfoClub.Location = new Point(10, 20);
             gbInfoClub.Name = "gbInfoClub";
-            gbInfoClub.Size = new Size(400, 359);
+            gbInfoClub.Size = new Size(325, 359);
             gbInfoClub.TabIndex = 0;
             gbInfoClub.TabStop = false;
             gbInfoClub.Text = "Información del club";
@@ -138,7 +137,7 @@
             // lblEmailClub
             // 
             lblEmailClub.AutoSize = true;
-            lblEmailClub.Location = new Point(153, 116);
+            lblEmailClub.Location = new Point(134, 116);
             lblEmailClub.Name = "lblEmailClub";
             lblEmailClub.Size = new Size(12, 15);
             lblEmailClub.TabIndex = 21;
@@ -156,7 +155,7 @@
             // lblPaisClub
             // 
             lblPaisClub.AutoSize = true;
-            lblPaisClub.Location = new Point(153, 314);
+            lblPaisClub.Location = new Point(134, 314);
             lblPaisClub.Name = "lblPaisClub";
             lblPaisClub.Size = new Size(12, 15);
             lblPaisClub.TabIndex = 19;
@@ -174,7 +173,7 @@
             // lblProvinciaClub
             // 
             lblProvinciaClub.AutoSize = true;
-            lblProvinciaClub.Location = new Point(153, 285);
+            lblProvinciaClub.Location = new Point(134, 285);
             lblProvinciaClub.Name = "lblProvinciaClub";
             lblProvinciaClub.Size = new Size(12, 15);
             lblProvinciaClub.TabIndex = 17;
@@ -192,7 +191,7 @@
             // lblCiudadClub
             // 
             lblCiudadClub.AutoSize = true;
-            lblCiudadClub.Location = new Point(153, 257);
+            lblCiudadClub.Location = new Point(134, 257);
             lblCiudadClub.Name = "lblCiudadClub";
             lblCiudadClub.Size = new Size(12, 15);
             lblCiudadClub.TabIndex = 15;
@@ -210,7 +209,7 @@
             // lblLocalidadClub
             // 
             lblLocalidadClub.AutoSize = true;
-            lblLocalidadClub.Location = new Point(153, 232);
+            lblLocalidadClub.Location = new Point(134, 232);
             lblLocalidadClub.Name = "lblLocalidadClub";
             lblLocalidadClub.Size = new Size(12, 15);
             lblLocalidadClub.TabIndex = 13;
@@ -228,7 +227,7 @@
             // lblCodigoPostalClub
             // 
             lblCodigoPostalClub.AutoSize = true;
-            lblCodigoPostalClub.Location = new Point(153, 200);
+            lblCodigoPostalClub.Location = new Point(134, 200);
             lblCodigoPostalClub.Name = "lblCodigoPostalClub";
             lblCodigoPostalClub.Size = new Size(12, 15);
             lblCodigoPostalClub.TabIndex = 11;
@@ -246,7 +245,7 @@
             // lblNumeroClub
             // 
             lblNumeroClub.AutoSize = true;
-            lblNumeroClub.Location = new Point(153, 173);
+            lblNumeroClub.Location = new Point(134, 173);
             lblNumeroClub.Name = "lblNumeroClub";
             lblNumeroClub.Size = new Size(12, 15);
             lblNumeroClub.TabIndex = 9;
@@ -264,7 +263,7 @@
             // lblCalleClub
             // 
             lblCalleClub.AutoSize = true;
-            lblCalleClub.Location = new Point(153, 145);
+            lblCalleClub.Location = new Point(134, 145);
             lblCalleClub.Name = "lblCalleClub";
             lblCalleClub.Size = new Size(12, 15);
             lblCalleClub.TabIndex = 7;
@@ -282,7 +281,7 @@
             // lblTelefonoClub
             // 
             lblTelefonoClub.AutoSize = true;
-            lblTelefonoClub.Location = new Point(153, 89);
+            lblTelefonoClub.Location = new Point(134, 89);
             lblTelefonoClub.Name = "lblTelefonoClub";
             lblTelefonoClub.Size = new Size(12, 15);
             lblTelefonoClub.TabIndex = 5;
@@ -300,7 +299,7 @@
             // lblCuitClub
             // 
             lblCuitClub.AutoSize = true;
-            lblCuitClub.Location = new Point(153, 63);
+            lblCuitClub.Location = new Point(134, 63);
             lblCuitClub.Name = "lblCuitClub";
             lblCuitClub.Size = new Size(12, 15);
             lblCuitClub.TabIndex = 3;
@@ -318,7 +317,7 @@
             // lblNombreClub
             // 
             lblNombreClub.AutoSize = true;
-            lblNombreClub.Location = new Point(153, 37);
+            lblNombreClub.Location = new Point(134, 37);
             lblNombreClub.Name = "lblNombreClub";
             lblNombreClub.Size = new Size(12, 15);
             lblNombreClub.TabIndex = 1;
@@ -352,7 +351,7 @@
             scAdmin.Panel2.Padding = new Padding(10, 10, 10, 20);
             scAdmin.Panel2.RightToLeft = RightToLeft.No;
             scAdmin.RightToLeft = RightToLeft.No;
-            scAdmin.Size = new Size(269, 399);
+            scAdmin.Size = new Size(344, 399);
             scAdmin.SplitterDistance = 183;
             scAdmin.TabIndex = 0;
             scAdmin.TabStop = false;
@@ -364,7 +363,7 @@
             iconLabel.ImageList = iconImageList;
             iconLabel.Location = new Point(10, 20);
             iconLabel.Name = "iconLabel";
-            iconLabel.Size = new Size(249, 153);
+            iconLabel.Size = new Size(324, 153);
             iconLabel.TabIndex = 0;
             // 
             // iconImageList
@@ -389,7 +388,7 @@
             gbInfoAdmin.Dock = DockStyle.Fill;
             gbInfoAdmin.Location = new Point(10, 10);
             gbInfoAdmin.Name = "gbInfoAdmin";
-            gbInfoAdmin.Size = new Size(249, 182);
+            gbInfoAdmin.Size = new Size(324, 182);
             gbInfoAdmin.TabIndex = 1;
             gbInfoAdmin.TabStop = false;
             gbInfoAdmin.Text = "Información del administrador";
@@ -397,7 +396,7 @@
             // lblFechaRegistroAdmin
             // 
             lblFechaRegistroAdmin.AutoSize = true;
-            lblFechaRegistroAdmin.Location = new Point(147, 145);
+            lblFechaRegistroAdmin.Location = new Point(141, 145);
             lblFechaRegistroAdmin.Name = "lblFechaRegistroAdmin";
             lblFechaRegistroAdmin.Size = new Size(12, 15);
             lblFechaRegistroAdmin.TabIndex = 25;
@@ -415,7 +414,7 @@
             // lblEmailAdmin
             // 
             lblEmailAdmin.AutoSize = true;
-            lblEmailAdmin.Location = new Point(147, 116);
+            lblEmailAdmin.Location = new Point(141, 116);
             lblEmailAdmin.Name = "lblEmailAdmin";
             lblEmailAdmin.Size = new Size(12, 15);
             lblEmailAdmin.TabIndex = 23;
@@ -433,7 +432,7 @@
             // lblTelefonoAdmin
             // 
             lblTelefonoAdmin.AutoSize = true;
-            lblTelefonoAdmin.Location = new Point(147, 90);
+            lblTelefonoAdmin.Location = new Point(141, 90);
             lblTelefonoAdmin.Name = "lblTelefonoAdmin";
             lblTelefonoAdmin.Size = new Size(12, 15);
             lblTelefonoAdmin.TabIndex = 11;
@@ -451,7 +450,7 @@
             // lblDniAdmin
             // 
             lblDniAdmin.AutoSize = true;
-            lblDniAdmin.Location = new Point(147, 64);
+            lblDniAdmin.Location = new Point(141, 64);
             lblDniAdmin.Name = "lblDniAdmin";
             lblDniAdmin.Size = new Size(12, 15);
             lblDniAdmin.TabIndex = 9;
@@ -469,7 +468,7 @@
             // lblNombreAdmin
             // 
             lblNombreAdmin.AutoSize = true;
-            lblNombreAdmin.Location = new Point(147, 38);
+            lblNombreAdmin.Location = new Point(141, 38);
             lblNombreAdmin.Name = "lblNombreAdmin";
             lblNombreAdmin.Size = new Size(12, 15);
             lblNombreAdmin.TabIndex = 7;
