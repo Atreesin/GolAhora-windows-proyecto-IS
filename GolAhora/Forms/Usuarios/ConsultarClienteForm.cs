@@ -87,10 +87,9 @@ namespace GolAhora.Forms
             this.ActiveControl = null; //quita el foco de cualquier control para evitar que se vean los bordes de selección
         }
 
-        private void gbDatos_Enter(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null; //quita el foco de cualquier control para evitar que se vean los bordes de selección
-
+            this.Close();
         }
     }
 }

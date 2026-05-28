@@ -130,7 +130,7 @@
             // 
             cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltrado.FormattingEnabled = true;
-            cbFiltrado.Items.AddRange(new object[] { "dni", "Nombre", "Email" });
+            cbFiltrado.Items.AddRange(new object[] { "Dni", "Nombre", "Email" });
             cbFiltrado.Location = new Point(334, 6);
             cbFiltrado.Margin = new Padding(4, 3, 4, 3);
             cbFiltrado.Name = "cbFiltrado";
@@ -155,6 +155,7 @@
             btnBuscar.TabIndex = 35;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // lblFiltro
             // 

@@ -67,7 +67,7 @@
             lblDni = new Label();
             lblUsername = new Label();
             lblNombre = new Label();
-            btn = new Button();
+            btnModificar = new Button();
             gbDatos.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,6 +79,7 @@
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // gbDatos
             // 
@@ -413,14 +414,15 @@
             lblNombre.TabIndex = 46;
             lblNombre.Text = "Nombre:";
             // 
-            // btn
+            // btnModificar
             // 
-            btn.Location = new Point(467, 316);
-            btn.Name = "btn";
-            btn.Size = new Size(75, 23);
-            btn.TabIndex = 6;
-            btn.Text = "Modificar";
-            btn.UseVisualStyleBackColor = true;
+            btnModificar.Location = new Point(467, 316);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 6;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // ModificarAdministradorForm
             // 
@@ -428,7 +430,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(554, 351);
-            Controls.Add(btn);
+            Controls.Add(btnModificar);
             Controls.Add(btnCancelar);
             Controls.Add(gbDatos);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -437,6 +439,8 @@
             MinimumSize = new Size(570, 390);
             Name = "ModificarAdministradorForm";
             Text = "Gol Ahora - Modificar administrador";
+            Load += ModificarAdministradorForm_Load;
+            Click += ModificarAdministradorForm_Click;
             gbDatos.ResumeLayout(false);
             gbDatos.PerformLayout();
             ResumeLayout(false);
@@ -482,6 +486,6 @@
         private Label lblNombre;
         private MaskedTextBox txtApellido;
         private Label lblApellido;
-        private Button btn;
+        private Button btnModificar;
     }
 }

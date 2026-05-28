@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usuarios\\consultarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usuarios\\consultarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\golahora\\forms\\usuarios\\consultarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usuarios\\consultarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usercontrols\\ucusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\ucusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\golahora\\forms\\usercontrols\\ucusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usercontrols\\ucusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\ucusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usuarios\\consultarclienteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usuarios\\consultarclienteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usercontrols\\ucusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\ucusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usercontrols\\uclobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\uclobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\golahora\\forms\\usercontrols\\uclobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\uclobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\forms\\usercontrols\\uclobby.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\forms\\usercontrols\\uclobby.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|c:\\users\\vboxuser\\desktop\\golahora-windows-proyecto-is\\golahora\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F369664D-91BD-FFD3-3A2A-1C8C0AE3596B}|GolAhora\\GolAhora.csproj|solutionrelative:golahora\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -67,133 +43,50 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConsultarClienteForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs [Design]*",
-              "RelativeToolTip": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T20:44:45.386Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConsultarClienteForm.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs*",
-              "RelativeToolTip": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.cs*",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAEwFwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T20:44:59.809Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConsultarClienteForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.Designer.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.Designer.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.Designer.cs*",
-              "RelativeToolTip": "GolAhora\\Forms\\Usuarios\\ConsultarClienteForm.Designer.cs*",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAALwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T20:45:00.402Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ucUsuarios.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs [Design]",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T20:43:22.308Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ucUsuarios.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAqwN8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T23:24:09.496Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ucUsuarios.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T23:24:13.982Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ucLobby.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwCwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T01:53:06.07Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ucLobby.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.Designer.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucLobby.Designer.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.Designer.cs",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucLobby.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T01:53:06.554Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ucLobby.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucLobby.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucLobby.cs [Design]",
-              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucLobby.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T01:53:05.445Z",
-              "IsPinned": true
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ucUsuarios.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
+              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
+              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.Designer.cs",
+              "ViewState": "AgIAAJcDAAAAAAAAAAAswLoDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T05:38:43.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ucUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAawJEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T05:38:42.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ucUsuarios.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "RelativeDocumentMoniker": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Forms\\UserControls\\ucUsuarios.cs [Design]",
+              "RelativeToolTip": "GolAhora\\Forms\\UserControls\\ucUsuarios.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T05:21:42.759Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -78,5 +78,10 @@ namespace GolAhora.Forms
             txtClub.ReadOnly = true;
             txtNivel.ReadOnly = true;
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

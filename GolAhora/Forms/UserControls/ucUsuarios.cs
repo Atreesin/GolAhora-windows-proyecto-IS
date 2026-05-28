@@ -71,6 +71,28 @@ namespace GolAhora.Forms.UserControls
         //
         //Busqueda en la lista
         //
+
+        private List<T> FiltrarLista<T>(List<T> listaOriginal, string filtro, string valorBuscado) where T : Usuario
+        {
+            switch (filtro)
+            {
+                case "Dni":
+                    return listaOriginal.Where(u => u.Dni != null && u.Dni.ToLower().Contains(valorBuscado)).ToList();
+
+                case "Nombre":
+                    return listaOriginal.Where(u =>
+                        (u.Nombre != null && u.Nombre.ToLower().Contains(valorBuscado)) ||
+                        (u.Apellido != null && u.Apellido.ToLower().Contains(valorBuscado))
+                    ).ToList();
+
+                case "Email":
+                    return listaOriginal.Where(u => u.Email != null && u.Email.ToLower().Contains(valorBuscado)).ToList();
+
+                default:
+                    return listaOriginal;
+            }
+        }
+
         private void ValidarCamposBusqueda(object sender, EventArgs e)
         {
             btnBuscar.Enabled = !string.IsNullOrWhiteSpace(txtBusqueda.Text)
@@ -80,13 +102,81 @@ namespace GolAhora.Forms.UserControls
 
         private void cbFiltrado_SelectedIndexChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
 
-        private void txtBusqueda_TextChanged(object sender, EventArgs e) => ValidarCamposBusqueda(sender, e);
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            ValidarCamposBusqueda(sender, e);
 
+            // Si el texto está vacío, restauramos la lista de la pestaña activa
+            if (string.IsNullOrWhiteSpace(txtBusqueda.Text))
+            {
+                switch (tcUsuarios.SelectedIndex)
+                {
+                    case 0:
+                        listBoxClientes.DataSource = null;
+                        listBoxClientes.DataSource = clientes;
+                        listBoxClientes.SelectedIndex = -1;
+                        break;
+                    case 1:
+                        listBoxProfesores.DataSource = null;
+                        listBoxProfesores.DataSource = profesores;
+                        listBoxProfesores.SelectedIndex = -1;
+                        break;
+                    case 2:
+                        listBoxEntrenadores.DataSource = null;
+                        listBoxEntrenadores.DataSource = entrenadores;
+                        listBoxEntrenadores.SelectedIndex = -1;
+                        break;
+                    case 3:
+                        listBoxAdministradores.DataSource = null;
+                        listBoxAdministradores.DataSource = administradores;
+                        listBoxAdministradores.SelectedIndex = -1;
+                        break;
+                    case 4:
+                        listBoxUsuarios.DataSource = null;
+                        listBoxUsuarios.DataSource = usuarios;
+                        listBoxUsuarios.SelectedIndex = -1;
+                        break;
+                }
+            }
+        }
 
         /*Botón de búsqueda*/
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string valorBuscado = txtBusqueda.Text.Trim().ToLower();
+            string filtroSeleccionado = cbFiltrado.SelectedItem.ToString();
 
+            switch (tcUsuarios.SelectedIndex)
+            {
+                case 0: 
+                    listBoxClientes.DataSource = null;
+                    listBoxClientes.DataSource = FiltrarLista(clientes, filtroSeleccionado, valorBuscado);
+                    listBoxClientes.SelectedIndex = -1;
+                    break;
+
+                case 1:
+                    listBoxProfesores.DataSource = null;
+                    listBoxProfesores.DataSource = FiltrarLista(profesores, filtroSeleccionado, valorBuscado);
+                    listBoxProfesores.SelectedIndex = -1;
+                    break;
+
+                case 2:
+                    listBoxEntrenadores.DataSource = null;
+                    listBoxEntrenadores.DataSource = FiltrarLista(entrenadores, filtroSeleccionado, valorBuscado);
+                    listBoxEntrenadores.SelectedIndex = -1;
+                    break;
+
+                case 3:
+                    listBoxAdministradores.DataSource = null;
+                    listBoxAdministradores.DataSource = FiltrarLista(administradores, filtroSeleccionado, valorBuscado);
+                    listBoxAdministradores.SelectedIndex = -1;
+                    break;
+                case 4:
+                    listBoxUsuarios.DataSource = null;
+                    listBoxUsuarios.DataSource = FiltrarLista(usuarios, filtroSeleccionado, valorBuscado);
+                    listBoxUsuarios.SelectedIndex = -1;
+                    break;
+            }
         }
 
         //
@@ -220,16 +310,24 @@ namespace GolAhora.Forms.UserControls
                 {
                     Form newForm = new ConsultarClienteForm(clienteCompleto);
                     newForm.ShowDialog();
-
-                    CleanSelected();
                 }
             }
         }
 
-        private void btnModificarCliente_Click(object sender, EventArgs e)
+        private async void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            Form newForm = new ModificarClienteForm();
-            newForm.ShowDialog();
+            if (listBoxClientes.SelectedIndex >= 0 && listBoxClientes.SelectedItem is Cliente clienteResumido)
+            {
+                btnModificarCliente.Enabled = false;
+                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id_Usuario);
+                btnModificarCliente.Enabled = true;
+
+                if (clienteCompleto is not null)
+                {
+                    Form newForm = new ModificarClienteForm(clienteCompleto);
+                    newForm.ShowDialog();
+                }
+            }
         }
 
         private void btnImprimirCliente_Click(object sender, EventArgs e)
@@ -266,23 +364,31 @@ namespace GolAhora.Forms.UserControls
             if (listBoxProfesores.SelectedIndex >= 0 && listBoxProfesores.SelectedItem is Profesor profeResumido)
             {
                 btnConsultarProfesor.Enabled = false;
-                Profesor profeCompleto = (Profesor)await apiService.GetUserByIdAsync(profeResumido.Id_Usuario);
+                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id_Usuario);
                 btnConsultarProfesor.Enabled = true;
 
                 if (profeCompleto is not null)
                 {
                     Form newForm = new ConsultarProfesorForm(profeCompleto);
                     newForm.ShowDialog();
-
-                    CleanSelected();
                 }
             }
         }
 
-        private void btnModificarProfesor_Click(object sender, EventArgs e)
+        private async void btnModificarProfesor_Click(object sender, EventArgs e)
         {
-            Form newForm = new ModificarProfesorForm();
-            newForm.ShowDialog();
+            if (listBoxProfesores.SelectedIndex >= 0 && listBoxProfesores.SelectedItem is Profesor profeResumido)
+            {
+                btnModificarProfesor.Enabled = false;
+                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id_Usuario);
+                btnModificarProfesor.Enabled = true;
+
+                if (profeCompleto is not null)
+                {
+                    Form newForm = new ModificarProfesorForm(profeCompleto);
+                    newForm.ShowDialog();
+                }
+            }
         }
 
         private void btnImprimirProfesor_Click(object sender, EventArgs e)
@@ -319,23 +425,31 @@ namespace GolAhora.Forms.UserControls
             if (listBoxEntrenadores.SelectedIndex >= 0 && listBoxEntrenadores.SelectedItem is Entrenador entrenadorResumido)
             {
                 btnConsultarEntrenador.Enabled = false;
-                Entrenador entrenadorCompleto = (Entrenador)await apiService.GetUserByIdAsync(entrenadorResumido.Id_Usuario);
+                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id_Usuario);
                 btnConsultarEntrenador.Enabled = true;
 
                 if (entrenadorCompleto is not null)
                 {
                     Form newForm = new ConsultarEntrenadorForm(entrenadorCompleto);
                     newForm.ShowDialog();
-
-                    CleanSelected();
                 }
             }
         }
 
-        private void btnModificarEntrenador_Click(object sender, EventArgs e)
+        private async void btnModificarEntrenador_Click(object sender, EventArgs e)
         {
-            Form newForm = new ModificarEntrenadorForm();
-            newForm.ShowDialog();
+            if (listBoxEntrenadores.SelectedIndex >= 0 && listBoxEntrenadores.SelectedItem is Entrenador entrenadorResumido)
+            {
+                btnModificarEntrenador.Enabled = false;
+                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id_Usuario);
+                btnModificarEntrenador.Enabled = true;
+
+                if (entrenadorCompleto is not null)
+                {
+                    Form newForm = new ModificarEntrenadorForm(entrenadorCompleto);
+                    newForm.ShowDialog();
+                }
+            }
         }
 
         private void btnImprimirEntrenador_Click(object sender, EventArgs e)
@@ -372,23 +486,31 @@ namespace GolAhora.Forms.UserControls
             if (listBoxAdministradores.SelectedIndex >= 0 && listBoxAdministradores.SelectedItem is Administrador adminResumido)
             {
                 btnConsultarAdmin.Enabled = false;
-                Administrador adminCompleto = (Administrador)await apiService.GetUserByIdAsync(adminResumido.Id_Usuario);
+                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id_Usuario);
                 btnConsultarAdmin.Enabled = true;
 
                 if (adminCompleto is not null)
                 {
                     Form newForm = new ConsultarAdministradorForm(adminCompleto);
                     newForm.ShowDialog();
-
-                    CleanSelected();
                 }
             }
         }
 
-        private void btnModificarAdmin_Click(object sender, EventArgs e)
+        private async void btnModificarAdmin_Click(object sender, EventArgs e)
         {
-            Form newForm = new ModificarAdministradorForm();
-            newForm.ShowDialog();
+            if (listBoxAdministradores.SelectedIndex >= 0 && listBoxAdministradores.SelectedItem is Administrador adminResumido)
+            {
+                btnModificarAdmin.Enabled = false;
+                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id_Usuario);
+                btnModificarAdmin.Enabled = true;
+
+                if (adminCompleto is not null)
+                {
+                    Form newForm = new ModificarAdministradorForm(adminCompleto);
+                    newForm.ShowDialog();
+                }
+            }
         }
 
         private void btnImprimirAdmin_Click(object sender, EventArgs e)
