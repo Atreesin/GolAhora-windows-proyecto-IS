@@ -11,8 +11,8 @@ namespace GolAhora.Models
         public string? Tipo_Cancha { get; set; }
         public int Duracion_Min { get; set; }
         public int Duracion_Max { get; set; }
-        public float Ancho { get; set; }
-        public float Largo { get; set; }
+        public string? Ancho { get; set; }
+        public string? Largo { get; set; }
         public int Capacidad { get; set; }
         public string? Superficie { get; set; }
         public string? Descripcion_Superficie { get; set; }
@@ -22,10 +22,10 @@ namespace GolAhora.Models
         //constructors
         public TipoDeCancha() { }
         
-        public TipoDeCancha(int id, string tipo_Cancha, int duracion_Min, int duracion_Max, float ancho, float largo, int capacidad, string superficie, string descripcion_Superficie, string imagen_Url)
+        public TipoDeCancha(int id, string tipo_cancha, int duracion_Min, int duracion_Max, string ancho, string largo, int capacidad, string superficie, string descripcion_Superficie, string imagen_Url)
         {
             Id = id;
-            Tipo_Cancha = tipo_Cancha;
+            Tipo_Cancha= tipo_cancha;
             Duracion_Min = duracion_Min;
             Duracion_Max = duracion_Max;
             Ancho = ancho;
@@ -38,6 +38,7 @@ namespace GolAhora.Models
 
         //methods
 
-
+        public override string ToString() =>
+            $"Tipo: {Tipo_Cancha}, Dimensiones: {Ancho}x{Largo} m, Capacidad: {Capacidad}, Superficie: {Superficie}";
     }
 }

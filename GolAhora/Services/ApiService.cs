@@ -2,6 +2,7 @@
 using GolAhora.Utils;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -21,7 +22,11 @@ namespace GolAhora.Services
             _client.DefaultRequestHeaders.Add("plataform", "windows");
         }
 
+        //
         //methods
+        //
+
+        /*login*/
         public async Task<string> LoginAsync(string email, string password)
         {
             var values = new Dictionary<string, string>
@@ -54,10 +59,6 @@ namespace GolAhora.Services
                 return null;
             }
         }
-
-        //
-        //Get methods
-        //
 
         /*club*/
         public async Task<string> GetClubDataAsync()
@@ -92,7 +93,11 @@ namespace GolAhora.Services
             }
         }
 
-        /*usuarios*/
+        //
+        //usuarios
+        //
+
+        /*información del usuario logueado*/
         public async Task<string> GetUserDataAsync()
         {
             if (string.IsNullOrEmpty(SessionManager.SessionId))
@@ -124,6 +129,10 @@ namespace GolAhora.Services
                 return null;
             }
         }
+        
+        //
+        //obtener usuario por id
+        //
 
         public async Task<Usuario> GetUserByIdAsync(int id)
         {
@@ -146,7 +155,7 @@ namespace GolAhora.Services
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    MessageBox.Show("No se pudo obtener el detalle del usuario.", "Error");
                     return null;
                 }
             }
@@ -210,7 +219,7 @@ namespace GolAhora.Services
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    MessageBox.Show("No se pudo obtener el detalle del profesor.", "Error");
                     return null;
                 }
             }
@@ -241,7 +250,7 @@ namespace GolAhora.Services
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    MessageBox.Show("No se pudo obtener el detalle del entrenador.", "Error");
                     return null;
                 }
             }
@@ -273,7 +282,7 @@ namespace GolAhora.Services
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    MessageBox.Show("No se pudo obtener el detalle del administrador.", "Error");
                     return null;
                 }
             }
@@ -284,6 +293,9 @@ namespace GolAhora.Services
             }
         }
 
+        //
+        //listar usuarios
+        //
         public async Task<List<Usuario>> GetUsersAsync()
         {
             if (string.IsNullOrEmpty(SessionManager.SessionId))
@@ -298,7 +310,7 @@ namespace GolAhora.Services
             HttpResponseMessage response;
             try
             {
-                response = await _client.GetAsync("clientes");
+                response = await _client.GetAsync("users");
             }
             catch (HttpRequestException ex)
             {
@@ -448,8 +460,223 @@ namespace GolAhora.Services
             }
         }
 
-        
-        /*canchas*/
+        /*public async Task<List<Administrador>> GetAdminsAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("administradores");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Administrador>();
+
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Administrador> admins = JsonSerializer.Deserialize<List<Administrador>>(jsonString, opciones);
+                return admins;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de administradores");
+                return null;
+            }
+        }*/
+
+        //
+        //canchas y tipos de cancha
+        //
+
+        /*listar canchas*/
+        public async Task<List<Cancha>> GetCanchasAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("canchas");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Cancha>();
+
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Cancha> canchas = JsonSerializer.Deserialize<List<Cancha>>(jsonString, opciones);
+                return canchas;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de canchas");
+                return null;
+            }
+        }
+
+        /*obtener cancha por id*/
+        public async Task<Cancha> GetCanchaByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"canchas/cancha_id={id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Cancha cancha = JsonSerializer.Deserialize<Cancha>(jsonString, opciones);
+                    return cancha;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle de la cancha.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+
+        /*listar tipos de cancha*/
+        public async Task<List<TipoDeCancha>> GetTiposDeCanchaAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("tipos_cancha");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<TipoDeCancha>();
+
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<TipoDeCancha> tipos= JsonSerializer.Deserialize<List<TipoDeCancha>>(jsonString, opciones);
+                return tipos;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                string mensajeMostrar = $"Error del servidor: {(int)response.StatusCode} {response.StatusCode}";
+
+                if (!string.IsNullOrWhiteSpace(errorContent))
+                {
+                    try
+                    {
+                        var error = JsonNode.Parse(errorContent);
+                        if (error?["message"] != null)
+                        {
+                            mensajeMostrar = error["message"].ToString();
+                        }
+                        else
+                        {
+                            mensajeMostrar = errorContent;
+                        }
+                    }
+                    catch (System.Text.Json.JsonException)
+                    {
+                        mensajeMostrar = errorContent;
+                    }
+                }
+
+                MessageBox.Show(mensajeMostrar, "Error al obtener tipos de cancha");
+                return null;
+            }
+        }
+
+        /*obtener tipo de cancha por id*/
+        public async Task<TipoDeCancha> GetTipoDeCanchaByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"tipos_canchas/cancha_id={id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    TipoDeCancha tipo= JsonSerializer.Deserialize<TipoDeCancha>(jsonString, opciones);
+                    return tipo;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del tipo de cancha.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+
+        /*listar superficies*/
         public async Task<string> GetSuperficiesAsync()
         {
             if (string.IsNullOrEmpty(SessionManager.SessionId))
@@ -491,8 +718,10 @@ namespace GolAhora.Services
                 formData.Add(new StringContent(tipo_cancha), "tipo_cancha");
                 formData.Add(new StringContent(duracion_min.ToString()), "duracion_min");
                 formData.Add(new StringContent(duracion_max.ToString()), "duracion_max");
-                formData.Add(new StringContent(ancho.ToString()), "ancho");
-                formData.Add(new StringContent(largo.ToString()), "largo");
+
+                formData.Add(new StringContent(ancho.ToString(System.Globalization.CultureInfo.InvariantCulture)), "ancho");
+                formData.Add(new StringContent(largo.ToString(System.Globalization.CultureInfo.InvariantCulture)), "largo");
+
                 formData.Add(new StringContent(capacidad.ToString()), "capacidad");
                 formData.Add(new StringContent(id_superficie.ToString()), "id_superficie");
 
@@ -501,10 +730,13 @@ namespace GolAhora.Services
                 {
                     var fileStream = System.IO.File.OpenRead(rutaImagen);
                     var streamContent = new StreamContent(fileStream);
-                    streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+
+                    string extension = System.IO.Path.GetExtension(rutaImagen).ToLower();
+                    string mediaType = extension == ".png" ? "image/png" : "image/jpeg";
+
+                    streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mediaType);
                     formData.Add(streamContent, "imagen", System.IO.Path.GetFileName(rutaImagen));
                 }
-
 
                 try
                 {
@@ -515,6 +747,7 @@ namespace GolAhora.Services
                     MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
                     return null;
                 }
+
                 if (response.IsSuccessStatusCode)
                 {
                     return await response.Content.ReadAsStringAsync();
@@ -522,12 +755,36 @@ namespace GolAhora.Services
                 else
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
-                    var error = JsonNode.Parse(errorContent);
-                    MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar tipo de cancha");
+                    string mensajeMostrar = $"Error del servidor: {(int)response.StatusCode} {response.StatusCode}";
+
+                    if (!string.IsNullOrWhiteSpace(errorContent))
+                    {
+                        try
+                        {
+                            var error = System.Text.Json.Nodes.JsonNode.Parse(errorContent);
+                            if (error?["message"] != null)
+                            {
+                                mensajeMostrar = error["message"].ToString();
+                            }
+                            else
+                            {
+                                mensajeMostrar = errorContent;
+                            }
+                        }
+                        catch (System.Text.Json.JsonException)
+                        {
+                            mensajeMostrar = errorContent;
+                        }
+                    }
+
+                    MessageBox.Show(mensajeMostrar, "Error al registrar tipo de cancha");
                     return null;
                 }
             }
         }
+        //
+        //
+        //
     }
 }
 

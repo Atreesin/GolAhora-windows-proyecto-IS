@@ -191,7 +191,6 @@ C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.ModificarCanchaForm.resources
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.ModificarTipoDeCanchaForm.resources
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.RegistrarCanchaForm.resources
-C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.RegistroTipoDeCanchaForm.resources
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.BajaAlumnoClaseForm.resources
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.BajaAlumnoEntrenamientoForm.resources
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.ConsultarClaseForm.resources
@@ -269,3 +268,4 @@ C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\bin\Debug\net10.
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\bin\Debug\net10.0-windows\GolAhora.pdb
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.genruntimeconfig.cache
 C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\ref\GolAhora.dll
+C:\Users\vboxuser\Desktop\GolAhora-windows-proyecto-IS\GolAhora\obj\Debug\net10.0-windows\GolAhora.Forms.RegistrarTipoCanchaForm.resources

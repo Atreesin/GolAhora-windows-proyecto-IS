@@ -64,8 +64,6 @@ namespace GolAhora.Forms.UserControls
                 listBoxUsuarios.DataSource = usuarios;
                 listBoxUsuarios.SelectedIndex = -1;
             }
-
-            
         }
 
         //

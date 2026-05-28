@@ -84,13 +84,13 @@ partial class ucCanchas
         // 
         cbFiltrado.DropDownStyle = ComboBoxStyle.DropDownList;
         cbFiltrado.FormattingEnabled = true;
-        cbFiltrado.Items.AddRange(new object[] { "ID", "Nombre", "Tipo" });
+        cbFiltrado.Items.AddRange(new object[] { "ID", "Tipo" });
         cbFiltrado.Location = new Point(337, 6);
         cbFiltrado.Margin = new Padding(4, 3, 4, 3);
         cbFiltrado.Name = "cbFiltrado";
         cbFiltrado.Size = new Size(100, 23);
         cbFiltrado.TabIndex = 14;
-        cbFiltrado.SelectedIndexChanged += cbFiltrar_SelectedIndexChanged;
+        cbFiltrado.SelectedIndexChanged += cbFiltrado_SelectedIndexChanged;
         // 
         // tcCanchas
         // 
@@ -448,6 +448,7 @@ partial class ucCanchas
         btnBuscar.TabIndex = 35;
         btnBuscar.Text = "Buscar";
         btnBuscar.UseVisualStyleBackColor = true;
+        btnBuscar.Click += btnBuscar_Click;
         // 
         // ucCanchas
         // 
@@ -464,6 +465,7 @@ partial class ucCanchas
         Margin = new Padding(4, 3, 4, 3);
         Name = "ucCanchas";
         Size = new Size(723, 421);
+        Load += ucCanchas_Load;
         Click += ucCanchas_Click;
         tcCanchas.ResumeLayout(false);
         tabCanchas.ResumeLayout(false);

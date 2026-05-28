@@ -56,10 +56,8 @@
               "RelativeDocumentMoniker": "GolAhora\\Models\\UsuarioProxy.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\UsuarioProxy.cs",
               "RelativeToolTip": "GolAhora\\Models\\UsuarioProxy.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:46:12.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:46:12.267Z"
             },
             {
               "$type": "Document",
@@ -71,8 +69,7 @@
               "RelativeToolTip": "GolAhora\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:46:11.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:46:11.298Z"
             },
             {
               "$type": "Document",
@@ -84,8 +81,7 @@
               "RelativeToolTip": "GolAhora\\Models\\IUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:45:35.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:45:35.005Z"
             },
             {
               "$type": "Document",
@@ -97,8 +93,7 @@
               "RelativeToolTip": "GolAhora\\Models\\ProfesionalProxy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:45:20.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:45:20.058Z"
             },
             {
               "$type": "Document",
@@ -110,8 +105,7 @@
               "RelativeToolTip": "GolAhora\\Models\\Profesor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:44:23.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:44:23.84Z"
             },
             {
               "$type": "Document",
@@ -123,8 +117,7 @@
               "RelativeToolTip": "GolAhora\\Models\\ProfesorProxy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:44:23.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:44:23.09Z"
             },
             {
               "$type": "Document",
@@ -136,8 +129,7 @@
               "RelativeToolTip": "GolAhora\\Models\\Profesional.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T14:34:44.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:34:44.791Z"
             }
           ]
         }

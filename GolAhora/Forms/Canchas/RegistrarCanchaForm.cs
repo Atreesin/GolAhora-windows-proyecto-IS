@@ -51,7 +51,7 @@ namespace GolAhora.Forms
         private void linkLblNuevoTipo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Abrir el formulario de registro de tipo de cancha
-            RegistroTipoDeCanchaForm newForm = new RegistroTipoDeCanchaForm();
+            RegistrarTipoCanchaForm newForm = new RegistrarTipoCanchaForm();
             newForm.ShowDialog();
         }
     }

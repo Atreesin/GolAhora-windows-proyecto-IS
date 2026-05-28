@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\UsuarioProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\UsuarioProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\Profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\ProfesorProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\ProfesorProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\IUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\IUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Profesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\Profesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\Profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\ProfesorProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GolAhora\\Models\\ProfesorProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,6 +51,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UsuarioProxy.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\UsuarioProxy.cs",
+              "RelativeDocumentMoniker": "GolAhora\\Models\\UsuarioProxy.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\UsuarioProxy.cs",
+              "RelativeToolTip": "GolAhora\\Models\\UsuarioProxy.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:46:12.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "GolAhora\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Usuario.cs",
+              "RelativeToolTip": "GolAhora\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:46:11.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "IUsuario.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\IUsuario.cs",
               "RelativeDocumentMoniker": "GolAhora\\Models\\IUsuario.cs",
@@ -55,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ProfesionalProxy.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\ProfesionalProxy.cs",
               "RelativeDocumentMoniker": "GolAhora\\Models\\ProfesionalProxy.cs",
@@ -68,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Profesor.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Profesor.cs",
               "RelativeDocumentMoniker": "GolAhora\\Models\\Profesor.cs",
@@ -81,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ProfesorProxy.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\ProfesorProxy.cs",
               "RelativeDocumentMoniker": "GolAhora\\Models\\ProfesorProxy.cs",
@@ -94,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Profesional.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\Models\\Profesional.cs",
               "RelativeDocumentMoniker": "GolAhora\\Models\\Profesional.cs",
