@@ -213,7 +213,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxClientes.SelectedIndex >= 0 && listBoxClientes.SelectedItem is Cliente clienteResumido)
             {
                 btnConsultarCliente.Enabled = false;
-                Cliente clienteCompleto = (Cliente)await apiService.GetUserByIdAsync(clienteResumido.Id_Usuario);
+                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id_Usuario);
                 btnConsultarCliente.Enabled = true;
 
                 if (clienteCompleto is not null)

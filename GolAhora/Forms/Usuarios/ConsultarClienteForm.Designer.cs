@@ -114,6 +114,7 @@
             gbDatos.Size = new Size(530, 290);
             gbDatos.TabIndex = 0;
             gbDatos.TabStop = false;
+            gbDatos.Enter += gbDatos_Enter;
             // 
             // txtFechaRegistro
             // 
@@ -427,6 +428,7 @@
             Name = "ConsultarClienteForm";
             Text = "Gol Ahora - Consultar cliente";
             Load += ConsultarClienteForm_Load;
+            Click += ConsultarClienteForm_Click;
             gbDatos.ResumeLayout(false);
             gbDatos.PerformLayout();
             ResumeLayout(false);

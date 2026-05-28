@@ -30,6 +30,7 @@ namespace GolAhora.Forms
         {
             CargarCampos();
             BloquearCampos();
+            this.ActiveControl = null;
         }
 
         private void CargarCampos()
@@ -77,6 +78,19 @@ namespace GolAhora.Forms
             txtPais.ReadOnly = true;
             txtClub.ReadOnly = true;
             txtNivel.ReadOnly = true;
+
+
+        }
+
+        private void ConsultarClienteForm_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null; //quita el foco de cualquier control para evitar que se vean los bordes de selección
+        }
+
+        private void gbDatos_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null; //quita el foco de cualquier control para evitar que se vean los bordes de selección
+
         }
     }
 }

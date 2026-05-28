@@ -157,6 +157,133 @@ namespace GolAhora.Services
             }
         }
 
+        public async Task<Cliente> GetClientByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"users/user_id={id}/full_info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Cliente customer = JsonSerializer.Deserialize<Cliente>(jsonString, opciones);
+                    return customer;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+
+        public async Task<Profesor> GetTeacherByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"users/user_id={id}/full_info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Profesor teacher = JsonSerializer.Deserialize<Profesor>(jsonString, opciones);
+                    return teacher;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+        public async Task<Entrenador> GetTrainerByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"users/user_id={id}/full_info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Entrenador trainer = JsonSerializer.Deserialize<Entrenador>(jsonString, opciones);
+                    return trainer;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+
+        public async Task<Administrador> GetAdminByIdAsync(int id)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId)) return null;
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"users/user_id={id}/full_info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                    Administrador admin = JsonSerializer.Deserialize<Administrador>(jsonString, opciones);
+                    return admin;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el detalle del cliente.", "Error");
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión al obtener el detalle.", "Error");
+                return null;
+            }
+        }
+
         public async Task<List<Usuario>> GetUsersAsync()
         {
             if (string.IsNullOrEmpty(SessionManager.SessionId))
@@ -224,7 +351,7 @@ namespace GolAhora.Services
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
 
-                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Cliente>();
+                if (string.IsNullOrWhiteSpace(jsonString)) { return new List<Cliente>(); }
 
                 var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 List<Cliente> clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString, opciones);
