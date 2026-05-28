@@ -35,9 +35,11 @@ namespace GolAhora.Forms
             string usuario = txtEmail.Text;
             string contraseña = txtPassword.Text;
 
-
+            btnLogin.Enabled = false;
             string result = await apiService.LoginAsync(usuario, contraseña);
-            if (result != null)
+            btnLogin.Enabled = true;
+
+            if (result is not null)
             {
 
                 SessionManager.SessionId = (JsonNode.Parse(result)?["token"] ?? "").ToString();

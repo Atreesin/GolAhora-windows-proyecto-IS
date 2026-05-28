@@ -332,20 +332,26 @@ namespace GolAhora.Forms.UserControls
 
         private void btnImprimirCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"La impresión de los datos del cliente <<xxx>> está en proceso...",
-                "Imprimir datos de cliente",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (listBoxClientes.SelectedItem is Cliente c)
+            {
+                MessageBox.Show(
+                    $"La impresión de los datos del cliente {c.Nombre} {c.Apellido} (dni: {c.Dni}) se encuentra en proceso...",
+                    "Imprimir datos de cliente",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void btnBajaCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"¿Seguro que deseas dar de baja del sistema al cliente <<xxx>>?",
-                "Confirmar baja de cliente",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+            if(listBoxClientes.SelectedItem is Cliente c)
+            {
+                MessageBox.Show(
+                    $"¿Seguro que deseas dar de baja del sistema al cliente {c.Nombre} {c.Apellido} (dni: {c.Dni})?",
+                    "Confirmar baja de cliente",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            }
         }
 
 
@@ -393,20 +399,26 @@ namespace GolAhora.Forms.UserControls
 
         private void btnImprimirProfesor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"La impresión de los datos del profesor <<xxx>> está en proceso...",
-                "Imprimir datos de profesor",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (listBoxProfesores.SelectedItem is Profesor p)
+            {
+                MessageBox.Show(
+                    $"La impresión de los datos del profesor {p.Nombre} {p.Apellido} (dni: {p.Dni}) se encuentra en proceso...",
+                    "Imprimir datos de profesor",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void btnBajaProfesor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"¿Seguro que deseas dar de baja del sistema al profesor <<xxx>>?",
-                "Confirmar baja de profesor",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+            if (listBoxProfesores.SelectedItem is Profesor p)
+            {
+                MessageBox.Show(
+                    $"¿Seguro que deseas dar de baja del sistema al profesor {p.Nombre} {p.Apellido} (dni: {p.Dni})?",
+                    "Confirmar baja de profesor",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            }
         }
 
 
@@ -454,20 +466,26 @@ namespace GolAhora.Forms.UserControls
 
         private void btnImprimirEntrenador_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"La impresión de los datos del entrenador <<xxx>> está en proceso...",
-                "Imprimir datos de entrenador",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (listBoxEntrenadores.SelectedItem is Entrenador en)
+            {
+                MessageBox.Show(
+                    $"La impresión de los datos del entrenador {en.Nombre} {en.Apellido} (dni: {en.Dni}) se encuentra en proceso...",
+                    "Imprimir datos de entrenador",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void btnBajaEntrenador_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"¿Seguro que deseas dar de baja del sistema al entrenador <<xxx>>?",
-                "Confirmar baja de entrenador",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+            if (listBoxEntrenadores.SelectedItem is Entrenador en)
+            {
+                MessageBox.Show(
+                    $"¿Seguro que deseas dar de baja del sistema al entrenador {en.Nombre} {en.Apellido} (dni: {en.Dni})?",
+                    "Confirmar baja de entrenador",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            }
         }
 
 
@@ -515,20 +533,26 @@ namespace GolAhora.Forms.UserControls
 
         private void btnImprimirAdmin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"La impresión de los datos del administrador <<xxx>> está en proceso...",
-                "Imprimir datos de administrador",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (listBoxAdministradores.SelectedItem is Administrador a)
+            {
+                MessageBox.Show(
+                    $"La impresión de los datos del administrador {a.Nombre} {a.Apellido} (dni: {a.Dni}) se encuentra en proceso...",
+                    "Imprimir datos de administrador",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void btnBajaAdmin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"¿Seguro que deseas dar de baja del sistema al administrador <<xxx>>?",
-                "Confirmar baja de administrador",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+            if (listBoxAdministradores.SelectedItem is Administrador a)
+            {
+                MessageBox.Show(
+                    $"¿Seguro que deseas dar de baja del sistema al administrador {a.Nombre} {a.Apellido} (dni: {a.Dni})?",
+                    "Confirmar baja de administrador",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            }
         }
     }
 }
