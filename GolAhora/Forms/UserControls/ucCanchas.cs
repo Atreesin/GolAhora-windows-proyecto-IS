@@ -268,8 +268,11 @@ public partial class ucCanchas : UserControl
 
     private void btnConsultarTipo_Click(object sender, EventArgs e)
     {
-        Form newForm = new ConsultarTipoDeCanchaForm();
-        newForm.ShowDialog();
+        if (listBoxTiposCancha.SelectedItem is TipoDeCancha tipoSeleccionado)
+        {
+            Form newForm = new ConsultarTipoDeCanchaForm(tipoSeleccionado);
+            newForm.ShowDialog();
+        }
     }
 
     private void btnModificarTipo_Click(object sender, EventArgs e)

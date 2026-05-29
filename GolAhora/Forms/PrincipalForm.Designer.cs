@@ -36,7 +36,7 @@ namespace GolAhora.Forms
             panelContenedor = new Panel();
             topMenu = new ToolStrip();
             btnAyuda = new ToolStripDropDownButton();
-            sobreNosotrosToolStripMenuItem = new ToolStripMenuItem();
+            LobbyToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             lateralMenu = new ToolStrip();
             btnUsuarios = new ToolStripButton();
@@ -82,7 +82,7 @@ namespace GolAhora.Forms
             // 
             btnAyuda.Alignment = ToolStripItemAlignment.Right;
             btnAyuda.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            btnAyuda.DropDownItems.AddRange(new ToolStripItem[] { sobreNosotrosToolStripMenuItem, toolStripMenuItem2 });
+            btnAyuda.DropDownItems.AddRange(new ToolStripItem[] { LobbyToolStripMenuItem, toolStripMenuItem2 });
             btnAyuda.Image = (Image)resources.GetObject("btnAyuda.Image");
             btnAyuda.ImageTransparentColor = Color.Magenta;
             btnAyuda.Name = "btnAyuda";
@@ -91,12 +91,13 @@ namespace GolAhora.Forms
             btnAyuda.Size = new Size(54, 28);
             btnAyuda.Text = "Ayuda";
             // 
-            // sobreNosotrosToolStripMenuItem
+            // LobbyToolStripMenuItem
             // 
-            sobreNosotrosToolStripMenuItem.Name = "sobreNosotrosToolStripMenuItem";
-            sobreNosotrosToolStripMenuItem.RightToLeft = RightToLeft.No;
-            sobreNosotrosToolStripMenuItem.Size = new Size(180, 22);
-            sobreNosotrosToolStripMenuItem.Text = "Sobre nosotros";
+            LobbyToolStripMenuItem.Name = "LobbyToolStripMenuItem";
+            LobbyToolStripMenuItem.RightToLeft = RightToLeft.No;
+            LobbyToolStripMenuItem.Size = new Size(180, 22);
+            LobbyToolStripMenuItem.Text = "lobby de inicio";
+            LobbyToolStripMenuItem.Click += LobbyToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -104,6 +105,7 @@ namespace GolAhora.Forms
             toolStripMenuItem2.RightToLeft = RightToLeft.No;
             toolStripMenuItem2.Size = new Size(180, 22);
             toolStripMenuItem2.Text = "Ir a nuestra web";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // lateralMenu
             // 
@@ -281,7 +283,7 @@ namespace GolAhora.Forms
         private System.Windows.Forms.ToolStripButton btnCompetencias;
         private System.Windows.Forms.ToolStripButton btnDescuentos;
         private System.Windows.Forms.ToolStripDropDownButton btnAyuda;
-        private System.Windows.Forms.ToolStripMenuItem sobreNosotrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LobbyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ImageList imageListLateralMenu;

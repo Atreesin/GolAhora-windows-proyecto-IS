@@ -653,7 +653,7 @@ namespace GolAhora.Services
 
             try
             {
-                HttpResponseMessage response = await _client.GetAsync($"tipos_canchas/cancha_id={id}");
+                HttpResponseMessage response = await _client.GetAsync($"tipos_canchas/tipo_cancha_id={id}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -703,6 +703,44 @@ namespace GolAhora.Services
                 var errorContent = await response.Content.ReadAsStringAsync();
                 var error = JsonNode.Parse(errorContent);
                 MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos del usuario");
+                return null;
+            }
+        }
+
+        public async Task<List<Superficie>> GetSuperficiesClassesAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("superficies");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Superficie>();
+
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Superficie> superficies = JsonSerializer.Deserialize<List<Superficie>>(jsonString, opciones);
+                return superficies;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de las superficies de cancha");
                 return null;
             }
         }

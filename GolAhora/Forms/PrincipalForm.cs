@@ -1,14 +1,16 @@
-﻿using System;
+﻿using GolAhora.Forms.UserControls;
+using GolAhora.Forms.UserControls.Driver;
+using GolAhora.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GolAhora.Forms.UserControls;
-using GolAhora.Forms.UserControls.Driver;
 
 namespace GolAhora.Forms
 {
@@ -68,6 +70,7 @@ namespace GolAhora.Forms
                 }
             }
 
+            LobbyToolStripMenuItem.Enabled = true;
             panelContenedor.Controls.Clear();
             pantallaNueva.Dock = DockStyle.Fill;
 
@@ -82,7 +85,7 @@ namespace GolAhora.Forms
             ChangePanel(pantalla);
             btnUsuarios.Enabled = false;
         }
-        
+
         private void btnReservas_Click(object sender, EventArgs e)
         {
             UserControl pantalla = Browser.Instance.GetView<ucReservas2>();
@@ -149,9 +152,34 @@ namespace GolAhora.Forms
             "Confirmar salida",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question
-    );
+            );
 
             if (respuesta == DialogResult.No) e.Cancel = true;
+        }
+
+        private async void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(SessionManager.SessionId))
+            {
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "https://golahora-proyecto-is.onrender.com/", // <= URL del sitio web
+                    UseShellExecute = true
+                };
+
+                Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show("No se ha iniciado sesión. Por favor, inicia sesión para acceder a la ayuda en línea.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void LobbyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserControl pantalla = Browser.Instance.GetView<ucLobby>();
+            ChangePanel(pantalla);
+            LobbyToolStripMenuItem.Enabled = false;
         }
     }
 }

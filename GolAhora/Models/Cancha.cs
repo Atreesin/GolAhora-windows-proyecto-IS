@@ -10,6 +10,7 @@ namespace GolAhora.Models
         public int Id { get; set; }
         public string? Nombre { get; set; }
         public string? Tipo_Cancha { get; set; }
+        public int Tiempo_Cancelacion { get; set; }
         public string? Ancho { get; set; }
         public string? Largo { get; set; }
         public int Capacidad { get; set; }
@@ -18,11 +19,12 @@ namespace GolAhora.Models
 
         //constructors
         public Cancha() { }
-        public Cancha(int id, string? nombre, string? tipo_Cancha, string? ancho, string? largo, int capacidad, Superficie? superficie, Club? club)
+        public Cancha(int id, string? nombre, string? tipo_Cancha, int tiempo_cancelacion, string? ancho, string? largo, int capacidad, Superficie? superficie, Club? club)
         {
             Id = id;
             Nombre = nombre;
             Tipo_Cancha = tipo_Cancha;
+            Tiempo_Cancelacion = tiempo_cancelacion;
             Ancho = ancho;
             Largo = largo;
             Capacidad = capacidad;

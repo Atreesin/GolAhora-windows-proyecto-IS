@@ -7,8 +7,18 @@ namespace GolAhora.Models
 {
     public class Superficie
     {
-        [JsonPropertyName("id_superficie")]
+        // 1. Mapea el caso donde la API manda "id" (Consulta individual)
+        [JsonPropertyName("id")]
         public int Id_Superficie { get; set; }
+
+        // Mapea el caso donde la API manda "id_superficie" (Lista completa)
+        // Lo que recibe aquí, se lo guarda a la variable principal de arriba.
+        [JsonPropertyName("id_superficie")]
+        public int Id_Superficie_Fallback
+        {
+            get => Id_Superficie;
+            set => Id_Superficie = value;
+        }
 
         [JsonPropertyName("tipo_superficie")]
         public string? Tipo_Superficie { get; set; }
@@ -24,5 +34,7 @@ namespace GolAhora.Models
             Tipo_Superficie = tipo_Superficie;
             Descripcion = descripcion;
         }
+
+        public override string ToString() => $"{Id_Superficie} - {Tipo_Superficie} - {Descripcion}";
     }
 }
