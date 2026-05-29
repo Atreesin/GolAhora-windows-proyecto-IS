@@ -595,7 +595,7 @@ namespace GolAhora.Services
             HttpResponseMessage response;
             try
             {
-                response = await _client.GetAsync("tipos_cancha");
+                response = await _client.GetAsync("tipos_canchas");
             }
             catch (HttpRequestException ex)
             {

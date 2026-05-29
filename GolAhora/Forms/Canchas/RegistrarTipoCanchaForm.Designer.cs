@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarTipoCanchaForm));
             btnRegistrar = new Button();
             openFileDialog1 = new OpenFileDialog();
             btnCancelar = new Button();
@@ -281,8 +282,9 @@
             Controls.Add(btnRegistrar);
             Controls.Add(gbDatos);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegistrarTipoCanchaForm";
-            Text = "RegistrarTipoCanchaForm";
+            Text = "Gol Ahora - Registrar tipo de cancha";
             Load += RegistrarTipoCanchaForm_Load;
             gbDatos.ResumeLayout(false);
             gbDatos.PerformLayout();
