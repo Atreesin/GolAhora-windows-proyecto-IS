@@ -301,7 +301,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxClientes.SelectedIndex >= 0 && listBoxClientes.SelectedItem is Cliente clienteResumido)
             {
                 btnConsultarCliente.Enabled = false;
-                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id_Usuario);
+                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id);
                 btnConsultarCliente.Enabled = true;
 
                 if (clienteCompleto is not null)
@@ -317,7 +317,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxClientes.SelectedIndex >= 0 && listBoxClientes.SelectedItem is Cliente clienteResumido)
             {
                 btnModificarCliente.Enabled = false;
-                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id_Usuario);
+                Cliente clienteCompleto = await apiService.GetClientByIdAsync(clienteResumido.Id);
                 btnModificarCliente.Enabled = true;
 
                 if (clienteCompleto is not null)
@@ -368,7 +368,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxProfesores.SelectedIndex >= 0 && listBoxProfesores.SelectedItem is Profesor profeResumido)
             {
                 btnConsultarProfesor.Enabled = false;
-                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id_Usuario);
+                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id);
                 btnConsultarProfesor.Enabled = true;
 
                 if (profeCompleto is not null)
@@ -384,7 +384,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxProfesores.SelectedIndex >= 0 && listBoxProfesores.SelectedItem is Profesor profeResumido)
             {
                 btnModificarProfesor.Enabled = false;
-                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id_Usuario);
+                Profesor profeCompleto = await apiService.GetTeacherByIdAsync(profeResumido.Id);
                 btnModificarProfesor.Enabled = true;
 
                 if (profeCompleto is not null)
@@ -435,7 +435,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxEntrenadores.SelectedIndex >= 0 && listBoxEntrenadores.SelectedItem is Entrenador entrenadorResumido)
             {
                 btnConsultarEntrenador.Enabled = false;
-                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id_Usuario);
+                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id);
                 btnConsultarEntrenador.Enabled = true;
 
                 if (entrenadorCompleto is not null)
@@ -451,7 +451,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxEntrenadores.SelectedIndex >= 0 && listBoxEntrenadores.SelectedItem is Entrenador entrenadorResumido)
             {
                 btnModificarEntrenador.Enabled = false;
-                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id_Usuario);
+                Entrenador entrenadorCompleto = await apiService.GetTrainerByIdAsync(entrenadorResumido.Id);
                 btnModificarEntrenador.Enabled = true;
 
                 if (entrenadorCompleto is not null)
@@ -502,7 +502,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxAdministradores.SelectedIndex >= 0 && listBoxAdministradores.SelectedItem is Administrador adminResumido)
             {
                 btnConsultarAdmin.Enabled = false;
-                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id_Usuario);
+                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id);
                 btnConsultarAdmin.Enabled = true;
 
                 if (adminCompleto is not null)
@@ -518,7 +518,7 @@ namespace GolAhora.Forms.UserControls
             if (listBoxAdministradores.SelectedIndex >= 0 && listBoxAdministradores.SelectedItem is Administrador adminResumido)
             {
                 btnModificarAdmin.Enabled = false;
-                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id_Usuario);
+                Administrador adminCompleto = await apiService.GetAdminByIdAsync(adminResumido.Id);
                 btnModificarAdmin.Enabled = true;
 
                 if (adminCompleto is not null)

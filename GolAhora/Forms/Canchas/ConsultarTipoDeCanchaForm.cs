@@ -32,25 +32,13 @@ namespace GolAhora.Forms
 
             if (tipo is not null)
             {
-                txtTipo.Text = tipoCompleto.Tipo;
+                txtTipo.Text = tipoCompleto.Tipo_Cancha;
                 txtDuracionMinima.Text = $"{tipoCompleto.Duracion_Min} min";
                 txtDuracionMaxima.Text = $"{tipoCompleto.Duracion_Max} min";
                 txtCapacidad.Text = tipoCompleto.Capacidad.ToString();
-
                 txtDimension.Text = $"{tipoCompleto.Ancho}m x {tipo.Largo}m";
+                if (tipoCompleto.Superficie is not null) txtSuperficie.Text = tipoCompleto.Superficie.Tipo_Superficie;
 
-                if (tipoCompleto.Superficie is not null)
-                {
-                    List<Superficie> superficies = await apiService.GetSuperficiesClassesAsync();
-                    foreach (var s in superficies)
-                    {
-                        if (s.Id_Superficie == tipoCompleto.Superficie.Id_Superficie)
-                        {
-                            txtSuperficie.Text = s.Tipo_Superficie;
-                            break;
-                        }
-                    }
-                }
 
                 if (!string.IsNullOrWhiteSpace(tipo.Imagen_Url))
                 {

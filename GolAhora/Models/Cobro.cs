@@ -4,7 +4,7 @@ namespace GolAhora.Models
 {
     public class Cobro
     {
-        public int IdCobro { get; set; }
+        public int Id { get; set; }
         public double Monto { get; set; }
         public DateTime Fecha { get; set; }
         public string? Estado { get; set; }
@@ -12,9 +12,9 @@ namespace GolAhora.Models
 
         public Cobro() { }
 
-        public Cobro(int idCobro, double monto, DateTime fecha, string? estado, string? metodoPago)
+        public Cobro(int id, double monto, DateTime fecha, string? estado, string? metodoPago)
         {
-            IdCobro = idCobro;
+            Id = id;
             Monto = monto;
             Fecha = fecha;
             Estado = estado;

@@ -7,7 +7,7 @@ namespace GolAhora.Models
 {
     public class Entrenamiento
     {
-        public int Id_Entrenamiento { get; set; }
+        public int Id { get; set; }
         public int Capacidad_Max { get; set; }
         public int Id_Profesional { get; set; }
         public int Id_Estado_Capacitacion { get; set; }
@@ -20,10 +20,10 @@ namespace GolAhora.Models
 
         public Entrenamiento() { }
 
-        public Entrenamiento(int Id_Entrenamiento, int Capacidad_Max, int Id_Profesional, int Id_Estado_Capacitacion,
+        public Entrenamiento(int Id, int Capacidad_Max, int Id_Profesional, int Id_Estado_Capacitacion,
                              int Id_Ocupacion, int Id_Club, int Id_Cancha, int Id_Cobro, string Horario_Asignado)
         {
-            this.Id_Entrenamiento = Id_Entrenamiento;
+            this.Id = Id;
             this.Capacidad_Max = Capacidad_Max;
             this.Id_Profesional = Id_Profesional;
             this.Id_Estado_Capacitacion = Id_Estado_Capacitacion;

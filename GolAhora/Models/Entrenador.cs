@@ -32,7 +32,7 @@ namespace GolAhora.Models
             Entrenamiento aux = null;
             foreach (Entrenamiento entrenamiento in this.entrenamientos)
             {
-                if (entrenamiento.Id_Entrenamiento == id)
+                if (entrenamiento.Id== id)
                 {
                     aux = entrenamiento;
                 }

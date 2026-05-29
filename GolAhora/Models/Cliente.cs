@@ -25,7 +25,7 @@ namespace GolAhora.Models
         {
             foreach (var reserva in ListaDeReservas)
             {
-                if (reserva.IdReserva == idReserva)
+                if (reserva.Id== idReserva)
                 {
                     return reserva;
                 }
@@ -71,9 +71,9 @@ namespace GolAhora.Models
                 throw new ArgumentNullException(nameof(reserva), "La reserva no puede ser nula.");
             }
             //evitar agregar reservas duplicadas (mismo ID)
-            if (ListaDeReservas.Any(r => r.IdReserva == reserva.IdReserva))
+            if (ListaDeReservas.Any(r => r.Id== reserva.Id))
             {
-                throw new InvalidOperationException($"Ya existe una reserva con el ID {reserva.IdReserva}.");
+                throw new InvalidOperationException($"Ya existe una reserva con el ID {reserva.Id}.");
             }
 
             //evitar agregar reservas con superposición de horarios (misma cancha, día y hora)

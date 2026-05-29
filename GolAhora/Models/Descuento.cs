@@ -6,7 +6,7 @@ namespace GolAhora.Models
 {
     public class Descuento
     {
-        public int Id_Descuento { get; set; }
+        public int Id { get; set; }
         public decimal Porcentaje_Descuento { get; set; }
         public string? Descripcion { get; set; }
         public bool Activo { get; set; }
@@ -17,9 +17,9 @@ namespace GolAhora.Models
         {
             Activo = false; // Por defecto, el descuento está desactivado - Según la BD
         }
-        public Descuento(int id_descuento, string descripcion, bool activo, decimal porcentaje_Descuento, int id_Club)
+        public Descuento(int id, string descripcion, bool activo, decimal porcentaje_Descuento, int id_Club)
         {
-            Id_Descuento = id_descuento;
+            Id = id;
             Descripcion = descripcion;
             Activo = activo;
             Porcentaje_Descuento = porcentaje_Descuento;

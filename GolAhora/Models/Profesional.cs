@@ -11,9 +11,9 @@ namespace GolAhora.Models
 
         //constructors
         public Profesional() { }
-        public Profesional(int id_usuario, string username, string nombre, string apellido, string email)
+        public Profesional(int id, string username, string nombre, string apellido, string email)
         {
-            Id_Usuario = id_usuario;
+            Id = id;
             Username = username;
             Nombre = nombre;
             Apellido = apellido;

@@ -6,7 +6,7 @@ namespace GolAhora.Models
 {
     public class Usuario
     {
-        public int Id_Usuario { get; set; }
+        public int Id { get; set; }
         public string? Username { get; set; }
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
@@ -23,11 +23,11 @@ namespace GolAhora.Models
 
         //Constructors
         public Usuario() { }
-        public Usuario(int id_usuario, string username, string nombre, string apellido, string dni, string nacionalidad, 
-            string genero, DateTime fecha_Nacimiento, string email, string telefono, DateTime fecha_Registro, 
+        public Usuario(int id, string username, string nombre, string apellido, string dni, string nacionalidad,
+            string genero, DateTime fecha_Nacimiento, string email, string telefono, DateTime fecha_Registro,
             Direccion direccion, Club club, string user_Level)
         {
-            Id_Usuario = id_usuario;
+            Id = id;
             Username = username;
             Nombre = nombre;
             Apellido = apellido;

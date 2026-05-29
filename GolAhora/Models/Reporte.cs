@@ -7,7 +7,7 @@ namespace GolAhora.Models
 {
     public class Reporte
     {
-        public int Id_Reporte { get; set; }
+        public int Id { get; set; }
         public byte Tipo_Reporte { get; set; } // Valor entre 0 y 3.
         public DateTime Fecha { get; set; }
         public string? Detalle { get; set; }
@@ -18,9 +18,9 @@ namespace GolAhora.Models
         {
             Fecha = DateTime.Now; // Por defecto, la fecha se establece al momento de crear el reporte
         }
-        public Reporte(int id_reporte, byte tipo_reporte, string detalle, int id_club)
+        public Reporte(int id, byte tipo_reporte, string detalle, int id_club)
         {
-            Id_Reporte = id_reporte;
+            Id = id;
             Tipo_Reporte = tipo_reporte;
             Detalle = detalle;
             Id_Club = id_club;

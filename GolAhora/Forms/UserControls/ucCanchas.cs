@@ -125,7 +125,7 @@ public partial class ucCanchas : UserControl
                     tiposFiltrados = tiposFiltrados.Where(t => t.Id.ToString().Contains(valorBuscado));
                     break;
                 case "Tipo":
-                    tiposFiltrados = tiposFiltrados.Where(t => t.Tipo!= null && t.Tipo.ToLower().Contains(valorBuscado));
+                    tiposFiltrados = tiposFiltrados.Where(t => t.Tipo_Cancha != null && t.Tipo_Cancha.ToLower().Contains(valorBuscado));
                     break;
             }
 
