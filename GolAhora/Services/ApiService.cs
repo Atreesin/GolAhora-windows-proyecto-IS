@@ -460,7 +460,7 @@ namespace GolAhora.Services
             }
         }
 
-        /*public async Task<List<Administrador>> GetAdminsAsync()
+        public async Task<List<Administrador>> GetAdminsAsync()
         {
             if (string.IsNullOrEmpty(SessionManager.SessionId))
             {
@@ -499,7 +499,7 @@ namespace GolAhora.Services
                 MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de administradores");
                 return null;
             }
-        }*/
+        }
 
         //
         //canchas y tipos de cancha
@@ -718,10 +718,8 @@ namespace GolAhora.Services
                 formData.Add(new StringContent(tipo_cancha), "tipo_cancha");
                 formData.Add(new StringContent(duracion_min.ToString()), "duracion_min");
                 formData.Add(new StringContent(duracion_max.ToString()), "duracion_max");
-
-                formData.Add(new StringContent(ancho.ToString(System.Globalization.CultureInfo.InvariantCulture)), "ancho");
-                formData.Add(new StringContent(largo.ToString(System.Globalization.CultureInfo.InvariantCulture)), "largo");
-
+                formData.Add(new StringContent(ancho.ToString()), "ancho");
+                formData.Add(new StringContent(largo.ToString()), "largo");
                 formData.Add(new StringContent(capacidad.ToString()), "capacidad");
                 formData.Add(new StringContent(id_superficie.ToString()), "id_superficie");
 
@@ -730,13 +728,10 @@ namespace GolAhora.Services
                 {
                     var fileStream = System.IO.File.OpenRead(rutaImagen);
                     var streamContent = new StreamContent(fileStream);
-
-                    string extension = System.IO.Path.GetExtension(rutaImagen).ToLower();
-                    string mediaType = extension == ".png" ? "image/png" : "image/jpeg";
-
-                    streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mediaType);
+                    streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
                     formData.Add(streamContent, "imagen", System.IO.Path.GetFileName(rutaImagen));
                 }
+
 
                 try
                 {
@@ -747,7 +742,6 @@ namespace GolAhora.Services
                     MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
                     return null;
                 }
-
                 if (response.IsSuccessStatusCode)
                 {
                     return await response.Content.ReadAsStringAsync();
@@ -755,29 +749,8 @@ namespace GolAhora.Services
                 else
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
-                    string mensajeMostrar = $"Error del servidor: {(int)response.StatusCode} {response.StatusCode}";
-
-                    if (!string.IsNullOrWhiteSpace(errorContent))
-                    {
-                        try
-                        {
-                            var error = System.Text.Json.Nodes.JsonNode.Parse(errorContent);
-                            if (error?["message"] != null)
-                            {
-                                mensajeMostrar = error["message"].ToString();
-                            }
-                            else
-                            {
-                                mensajeMostrar = errorContent;
-                            }
-                        }
-                        catch (System.Text.Json.JsonException)
-                        {
-                            mensajeMostrar = errorContent;
-                        }
-                    }
-
-                    MessageBox.Show(mensajeMostrar, "Error al registrar tipo de cancha");
+                    var error = JsonNode.Parse(errorContent);
+                    MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar tipo de cancha");
                     return null;
                 }
             }

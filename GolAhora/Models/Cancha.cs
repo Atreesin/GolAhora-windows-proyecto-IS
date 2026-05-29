@@ -8,22 +8,29 @@ namespace GolAhora.Models
     {
         //variables
         public int Id { get; set; }
-        public TipoDeCancha? Tipo_Cancha { get; set; }
+        public string? Nombre { get; set; }
+        public string? Tipo_Cancha { get; set; }
+        public string? Ancho { get; set; }
+        public string? Largo { get; set; }
+        public int Capacidad { get; set; }
+        public Superficie? Superficie { get; set; }
         public Club? Club { get; set; }
-        public string? Imagen_Url { get; set; }
 
         //constructors
         public Cancha() { }
-        public Cancha(int id, TipoDeCancha? tipo_Cancha, Club? club, string imagen_Url)
+        public Cancha(int id, string? nombre, string? tipo_Cancha, string? ancho, string? largo, int capacidad, Superficie? superficie, Club? club)
         {
             Id = id;
+            Nombre = nombre;
             Tipo_Cancha = tipo_Cancha;
+            Ancho = ancho;
+            Largo = largo;
+            Capacidad = capacidad;
+            Superficie = superficie;
             Club = club;
-            Imagen_Url = imagen_Url;
         }
 
-        //methods
         public override string ToString() => 
-            $"Cancha: {Id}, Tipo: {Tipo_Cancha?.Tipo_Cancha ?? "-"}, Dimensiones: {Tipo_Cancha?.Ancho}x{Tipo_Cancha?.Largo} m (capacidad: {Tipo_Cancha?.Capacidad.ToString() ??  "-"})";
+            $"Cancha: {Nombre}, Tipo: {Tipo_Cancha}, Dimensiones: {Ancho}x{Largo} m (capacidad: {Capacidad})";
     }
 }

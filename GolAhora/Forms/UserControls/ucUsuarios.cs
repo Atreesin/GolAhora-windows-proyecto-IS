@@ -36,7 +36,7 @@ namespace GolAhora.Forms.UserControls
             clientes = await apiService.GetClientsAsync();
             profesores = await apiService.GetTeachersAsync();
             entrenadores = await apiService.GetTrainersAsync();
-            //administradores = await apiService.GetAdminsAsync();
+            administradores = await apiService.GetAdminsAsync();
             usuarios = await apiService.GetUsersAsync();
 
             if (clientes is not null)
