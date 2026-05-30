@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace GolAhora.Models
 {
     public class TipoDeCancha
     {
         //variables
+        [JsonPropertyName("id")]
         public int Id { get; set; }
+
+        [JsonPropertyName("tipo_cancha")]
         public string? Tipo_Cancha { get; set; }
         public int Duracion_Min { get; set; }
         public int Duracion_Max { get; set; }

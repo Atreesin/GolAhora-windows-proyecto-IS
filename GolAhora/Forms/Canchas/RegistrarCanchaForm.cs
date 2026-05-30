@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GolAhora.Models;
+using GolAhora.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,28 +12,20 @@ namespace GolAhora.Forms
 {
     public partial class RegistrarCanchaForm : Form
     {
+        private ApiService apiService = new ApiService();
         public RegistrarCanchaForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private async void RegistrarCanchaForm_Load(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            var nombreCancha = txtNombreCancha.Text;
-
-            MessageBox.Show(
-                $"La cancha {nombreCancha} se registró correctamente",
-                "Registro de Cancha",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            
-            this.Close();
+            cbTipoCancha.Items.Clear();
+            var tipos = await apiService.GetTiposDeCanchaStringListAsync();
+            cbTipoCancha.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<TipoDeCancha>>(tipos);
+            cbTipoCancha.DisplayMember = "Tipo_cancha";
+            cbTipoCancha.ValueMember = "Id";
         }
 
         private void ValidarCampos(object sender, EventArgs e)
@@ -39,8 +33,8 @@ namespace GolAhora.Forms
             btnRegistrar.Enabled =
                 !string.IsNullOrWhiteSpace(txtNombreCancha.Text)
                 && cbTipoCancha.SelectedItem != null
-                && cbHoraInicio.SelectedItem != null
-                && cbHoraFin.SelectedItem != null;
+                && nudPlazo.Value > 0
+                && nudPrecio.Value > 0;
         }
 
         private void txtNombreCancha_TextChanged(object sender, EventArgs e) => ValidarCampos(sender, e);
@@ -53,6 +47,38 @@ namespace GolAhora.Forms
             // Abrir el formulario de registro de tipo de cancha
             RegistrarTipoCanchaForm newForm = new RegistrarTipoCanchaForm();
             newForm.ShowDialog();
+        }
+
+
+        //
+        //botones
+        //
+
+
+        private async void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            string nombreCancha = txtNombreCancha.Text;
+            int plazoCancelacion = (int)nudPlazo.Value * 60;
+            decimal precio = nudPrecio.Value;
+            int tipoCanchaId = cbTipoCancha.SelectedValue != null ? (int)cbTipoCancha.SelectedValue : 0;
+
+            string result = await apiService.RegistrarCanchaAsync(nombreCancha, plazoCancelacion, precio, tipoCanchaId);
+
+            if (result != null)
+            {
+                MessageBox.Show("Cancha registrada exitosamente");
+                this.Close();
+            }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "¿Está seguro que desea cancelar el registro?",
+                "Confirmar modificación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes) this.Close();
         }
     }
 }

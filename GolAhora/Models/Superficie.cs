@@ -7,7 +7,6 @@ namespace GolAhora.Models
 {
     public class Superficie
     {
-        // 1. Mapea el caso donde la API manda "id" (Consulta individual)
         [JsonPropertyName("id")]
         public int Id{ get; set; }
 

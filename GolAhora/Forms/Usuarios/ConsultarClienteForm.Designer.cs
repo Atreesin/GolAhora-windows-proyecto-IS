@@ -30,43 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarClienteForm));
             gbDatos = new GroupBox();
+            txtFechaRegistro = new MaskedTextBox();
+            txtNivel = new MaskedTextBox();
+            txtClub = new MaskedTextBox();
+            txtPais = new MaskedTextBox();
+            txtCiudad = new MaskedTextBox();
+            txtLocalidad = new MaskedTextBox();
+            txtCodigoPostal = new MaskedTextBox();
+            txtNumero = new MaskedTextBox();
+            txtCalle = new MaskedTextBox();
+            txtProvincia = new MaskedTextBox();
             txtTelefono = new MaskedTextBox();
             txtEmail = new MaskedTextBox();
+            txtGenero = new MaskedTextBox();
             txtNacionalidad = new MaskedTextBox();
             txtDni = new MaskedTextBox();
             txtNombre = new MaskedTextBox();
             txtUsername = new MaskedTextBox();
+            txtFechaNacimiento = new MaskedTextBox();
+            label19 = new Label();
+            lblClub = new Label();
+            lblPais = new Label();
+            lblProvincia = new Label();
+            lblCiudad = new Label();
+            lblLocalidad = new Label();
+            lblCodigoPostal = new Label();
+            lblNumero = new Label();
+            lblCalle = new Label();
+            lblFechaRegistro = new Label();
+            lblTelefono = new Label();
             lblEmail = new Label();
             lblFechaNacimiento = new Label();
+            lblGenero = new Label();
             lblNacionalidad = new Label();
             lblDni = new Label();
             lblUsername = new Label();
             lblNombre = new Label();
             btnVolver = new Button();
-            txtFechaNacimiento = new MaskedTextBox();
-            lblTelefono = new Label();
-            lblFechaRegistro = new Label();
-            txtFechaRegistro = new MaskedTextBox();
-            lblCalle = new Label();
-            txtCalle = new MaskedTextBox();
-            txtGenero = new MaskedTextBox();
-            lblGenero = new Label();
-            lblNumero = new Label();
-            lblCodigoPostal = new Label();
-            lblLocalidad = new Label();
-            lblCiudad = new Label();
-            lblProvincia = new Label();
-            lblPais = new Label();
-            lblClub = new Label();
-            label19 = new Label();
-            txtProvincia = new MaskedTextBox();
-            txtNumero = new MaskedTextBox();
-            txtCodigoPostal = new MaskedTextBox();
-            txtLocalidad = new MaskedTextBox();
-            txtCiudad = new MaskedTextBox();
-            txtPais = new MaskedTextBox();
-            txtClub = new MaskedTextBox();
-            txtNivel = new MaskedTextBox();
             gbDatos.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,9 +111,99 @@
             gbDatos.Location = new Point(12, 12);
             gbDatos.Name = "gbDatos";
             gbDatos.Padding = new Padding(10);
-            gbDatos.Size = new Size(530, 290);
+            gbDatos.Size = new Size(590, 290);
             gbDatos.TabIndex = 0;
             gbDatos.TabStop = false;
+            // 
+            // txtFechaRegistro
+            // 
+            txtFechaRegistro.BackColor = SystemColors.ActiveCaption;
+            txtFechaRegistro.BorderStyle = BorderStyle.None;
+            txtFechaRegistro.Location = new Point(143, 257);
+            txtFechaRegistro.Name = "txtFechaRegistro";
+            txtFechaRegistro.Size = new Size(170, 16);
+            txtFechaRegistro.TabIndex = 82;
+            // 
+            // txtNivel
+            // 
+            txtNivel.BackColor = SystemColors.ActiveCaption;
+            txtNivel.BorderStyle = BorderStyle.None;
+            txtNivel.Location = new Point(427, 256);
+            txtNivel.Name = "txtNivel";
+            txtNivel.Size = new Size(150, 16);
+            txtNivel.TabIndex = 81;
+            // 
+            // txtClub
+            // 
+            txtClub.BackColor = SystemColors.ActiveCaption;
+            txtClub.BorderStyle = BorderStyle.None;
+            txtClub.Location = new Point(427, 226);
+            txtClub.Name = "txtClub";
+            txtClub.Size = new Size(150, 16);
+            txtClub.TabIndex = 80;
+            // 
+            // txtPais
+            // 
+            txtPais.BackColor = SystemColors.ActiveCaption;
+            txtPais.BorderStyle = BorderStyle.None;
+            txtPais.Location = new Point(427, 198);
+            txtPais.Name = "txtPais";
+            txtPais.Size = new Size(150, 16);
+            txtPais.TabIndex = 79;
+            // 
+            // txtCiudad
+            // 
+            txtCiudad.BackColor = SystemColors.ActiveCaption;
+            txtCiudad.BorderStyle = BorderStyle.None;
+            txtCiudad.Location = new Point(427, 139);
+            txtCiudad.Name = "txtCiudad";
+            txtCiudad.Size = new Size(150, 16);
+            txtCiudad.TabIndex = 78;
+            // 
+            // txtLocalidad
+            // 
+            txtLocalidad.BackColor = SystemColors.ActiveCaption;
+            txtLocalidad.BorderStyle = BorderStyle.None;
+            txtLocalidad.Location = new Point(427, 110);
+            txtLocalidad.Name = "txtLocalidad";
+            txtLocalidad.Size = new Size(150, 16);
+            txtLocalidad.TabIndex = 77;
+            // 
+            // txtCodigoPostal
+            // 
+            txtCodigoPostal.BackColor = SystemColors.ActiveCaption;
+            txtCodigoPostal.BorderStyle = BorderStyle.None;
+            txtCodigoPostal.Location = new Point(427, 80);
+            txtCodigoPostal.Name = "txtCodigoPostal";
+            txtCodigoPostal.Size = new Size(150, 16);
+            txtCodigoPostal.TabIndex = 76;
+            // 
+            // txtNumero
+            // 
+            txtNumero.BackColor = SystemColors.ActiveCaption;
+            txtNumero.BorderStyle = BorderStyle.None;
+            txtNumero.Location = new Point(427, 51);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(150, 16);
+            txtNumero.TabIndex = 75;
+            // 
+            // txtCalle
+            // 
+            txtCalle.BackColor = SystemColors.ActiveCaption;
+            txtCalle.BorderStyle = BorderStyle.None;
+            txtCalle.Location = new Point(427, 23);
+            txtCalle.Name = "txtCalle";
+            txtCalle.Size = new Size(150, 16);
+            txtCalle.TabIndex = 74;
+            // 
+            // txtProvincia
+            // 
+            txtProvincia.BackColor = SystemColors.ActiveCaption;
+            txtProvincia.BorderStyle = BorderStyle.None;
+            txtProvincia.Location = new Point(427, 170);
+            txtProvincia.Name = "txtProvincia";
+            txtProvincia.Size = new Size(150, 16);
+            txtProvincia.TabIndex = 73;
             // 
             // txtTelefono
             // 
@@ -121,7 +211,7 @@
             txtTelefono.BorderStyle = BorderStyle.None;
             txtTelefono.Location = new Point(143, 228);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(130, 16);
+            txtTelefono.Size = new Size(170, 16);
             txtTelefono.TabIndex = 71;
             // 
             // txtEmail
@@ -130,8 +220,17 @@
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Location = new Point(143, 199);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(130, 16);
+            txtEmail.Size = new Size(170, 16);
             txtEmail.TabIndex = 70;
+            // 
+            // txtGenero
+            // 
+            txtGenero.BackColor = SystemColors.ActiveCaption;
+            txtGenero.BorderStyle = BorderStyle.None;
+            txtGenero.Location = new Point(143, 140);
+            txtGenero.Name = "txtGenero";
+            txtGenero.Size = new Size(170, 16);
+            txtGenero.TabIndex = 69;
             // 
             // txtNacionalidad
             // 
@@ -139,7 +238,7 @@
             txtNacionalidad.BorderStyle = BorderStyle.None;
             txtNacionalidad.Location = new Point(143, 111);
             txtNacionalidad.Name = "txtNacionalidad";
-            txtNacionalidad.Size = new Size(130, 16);
+            txtNacionalidad.Size = new Size(170, 16);
             txtNacionalidad.TabIndex = 68;
             // 
             // txtDni
@@ -148,7 +247,7 @@
             txtDni.BorderStyle = BorderStyle.None;
             txtDni.Location = new Point(143, 81);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(130, 16);
+            txtDni.Size = new Size(170, 16);
             txtDni.TabIndex = 67;
             // 
             // txtNombre
@@ -157,7 +256,7 @@
             txtNombre.BorderStyle = BorderStyle.None;
             txtNombre.Location = new Point(143, 52);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(130, 16);
+            txtNombre.Size = new Size(170, 16);
             txtNombre.TabIndex = 66;
             // 
             // txtUsername
@@ -166,8 +265,116 @@
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Location = new Point(143, 24);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(130, 16);
+            txtUsername.Size = new Size(170, 16);
             txtUsername.TabIndex = 65;
+            // 
+            // txtFechaNacimiento
+            // 
+            txtFechaNacimiento.BackColor = SystemColors.ActiveCaption;
+            txtFechaNacimiento.BorderStyle = BorderStyle.None;
+            txtFechaNacimiento.Location = new Point(143, 171);
+            txtFechaNacimiento.Name = "txtFechaNacimiento";
+            txtFechaNacimiento.Size = new Size(170, 16);
+            txtFechaNacimiento.TabIndex = 64;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(382, 256);
+            label19.Name = "label19";
+            label19.Size = new Size(39, 15);
+            label19.TabIndex = 63;
+            label19.Text = "Nivel:";
+            // 
+            // lblClub
+            // 
+            lblClub.AutoSize = true;
+            lblClub.Location = new Point(387, 225);
+            lblClub.Name = "lblClub";
+            lblClub.Size = new Size(34, 15);
+            lblClub.TabIndex = 62;
+            lblClub.Text = "Club:";
+            // 
+            // lblPais
+            // 
+            lblPais.AutoSize = true;
+            lblPais.Location = new Point(390, 198);
+            lblPais.Name = "lblPais";
+            lblPais.Size = new Size(31, 15);
+            lblPais.TabIndex = 61;
+            lblPais.Text = "Pais:";
+            // 
+            // lblProvincia
+            // 
+            lblProvincia.AutoSize = true;
+            lblProvincia.Location = new Point(360, 170);
+            lblProvincia.Name = "lblProvincia";
+            lblProvincia.Size = new Size(61, 15);
+            lblProvincia.TabIndex = 60;
+            lblProvincia.Text = "Provincia:";
+            // 
+            // lblCiudad
+            // 
+            lblCiudad.AutoSize = true;
+            lblCiudad.Location = new Point(374, 139);
+            lblCiudad.Name = "lblCiudad";
+            lblCiudad.Size = new Size(47, 15);
+            lblCiudad.TabIndex = 59;
+            lblCiudad.Text = "Ciudad:";
+            // 
+            // lblLocalidad
+            // 
+            lblLocalidad.AutoSize = true;
+            lblLocalidad.Location = new Point(360, 110);
+            lblLocalidad.Name = "lblLocalidad";
+            lblLocalidad.Size = new Size(61, 15);
+            lblLocalidad.TabIndex = 58;
+            lblLocalidad.Text = "Localidad:";
+            // 
+            // lblCodigoPostal
+            // 
+            lblCodigoPostal.AutoSize = true;
+            lblCodigoPostal.Location = new Point(337, 80);
+            lblCodigoPostal.Name = "lblCodigoPostal";
+            lblCodigoPostal.Size = new Size(84, 15);
+            lblCodigoPostal.TabIndex = 57;
+            lblCodigoPostal.Text = "Codigo postal:";
+            // 
+            // lblNumero
+            // 
+            lblNumero.AutoSize = true;
+            lblNumero.Location = new Point(365, 51);
+            lblNumero.Name = "lblNumero";
+            lblNumero.Size = new Size(56, 15);
+            lblNumero.TabIndex = 56;
+            lblNumero.Text = "Numero:";
+            // 
+            // lblCalle
+            // 
+            lblCalle.AutoSize = true;
+            lblCalle.Location = new Point(385, 23);
+            lblCalle.Name = "lblCalle";
+            lblCalle.Size = new Size(36, 15);
+            lblCalle.TabIndex = 55;
+            lblCalle.Text = "Calle:";
+            // 
+            // lblFechaRegistro
+            // 
+            lblFechaRegistro.AutoSize = true;
+            lblFechaRegistro.Location = new Point(31, 257);
+            lblFechaRegistro.Name = "lblFechaRegistro";
+            lblFechaRegistro.Size = new Size(106, 15);
+            lblFechaRegistro.TabIndex = 54;
+            lblFechaRegistro.Text = "Fecha de registro:";
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(21, 227);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(116, 15);
+            lblTelefono.TabIndex = 53;
+            lblTelefono.Text = "Numero telefónico:";
             // 
             // lblEmail
             // 
@@ -186,6 +393,15 @@
             lblFechaNacimiento.Size = new Size(124, 15);
             lblFechaNacimiento.TabIndex = 51;
             lblFechaNacimiento.Text = "Fecha de nacimiento:";
+            // 
+            // lblGenero
+            // 
+            lblGenero.AutoSize = true;
+            lblGenero.Location = new Point(85, 140);
+            lblGenero.Name = "lblGenero";
+            lblGenero.Size = new Size(52, 15);
+            lblGenero.TabIndex = 50;
+            lblGenero.Text = "Genero:";
             // 
             // lblNacionalidad
             // 
@@ -225,7 +441,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(467, 316);
+            btnVolver.Location = new Point(527, 316);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(75, 23);
             btnVolver.TabIndex = 1;
@@ -233,234 +449,18 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // txtFechaNacimiento
-            // 
-            txtFechaNacimiento.BackColor = SystemColors.ActiveCaption;
-            txtFechaNacimiento.BorderStyle = BorderStyle.None;
-            txtFechaNacimiento.Location = new Point(143, 171);
-            txtFechaNacimiento.Name = "txtFechaNacimiento";
-            txtFechaNacimiento.Size = new Size(130, 16);
-            txtFechaNacimiento.TabIndex = 64;
-            // 
-            // lblTelefono
-            // 
-            lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(21, 227);
-            lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(116, 15);
-            lblTelefono.TabIndex = 53;
-            lblTelefono.Text = "Numero telefónico:";
-            // 
-            // lblFechaRegistro
-            // 
-            lblFechaRegistro.AutoSize = true;
-            lblFechaRegistro.Location = new Point(31, 257);
-            lblFechaRegistro.Name = "lblFechaRegistro";
-            lblFechaRegistro.Size = new Size(106, 15);
-            lblFechaRegistro.TabIndex = 54;
-            lblFechaRegistro.Text = "Fecha de registro:";
-            // 
-            // txtFechaRegistro
-            // 
-            txtFechaRegistro.BackColor = SystemColors.ActiveCaption;
-            txtFechaRegistro.BorderStyle = BorderStyle.None;
-            txtFechaRegistro.Location = new Point(143, 257);
-            txtFechaRegistro.Name = "txtFechaRegistro";
-            txtFechaRegistro.Size = new Size(130, 16);
-            txtFechaRegistro.TabIndex = 82;
-            // 
-            // lblCalle
-            // 
-            lblCalle.AutoSize = true;
-            lblCalle.Location = new Point(337, 24);
-            lblCalle.Name = "lblCalle";
-            lblCalle.Size = new Size(36, 15);
-            lblCalle.TabIndex = 55;
-            lblCalle.Text = "Calle:";
-            // 
-            // txtCalle
-            // 
-            txtCalle.BackColor = SystemColors.ActiveCaption;
-            txtCalle.BorderStyle = BorderStyle.None;
-            txtCalle.Location = new Point(379, 24);
-            txtCalle.Name = "txtCalle";
-            txtCalle.Size = new Size(130, 16);
-            txtCalle.TabIndex = 74;
-            // 
-            // txtGenero
-            // 
-            txtGenero.BackColor = SystemColors.ActiveCaption;
-            txtGenero.BorderStyle = BorderStyle.None;
-            txtGenero.Location = new Point(143, 140);
-            txtGenero.Name = "txtGenero";
-            txtGenero.Size = new Size(130, 16);
-            txtGenero.TabIndex = 69;
-            // 
-            // lblGenero
-            // 
-            lblGenero.AutoSize = true;
-            lblGenero.Location = new Point(85, 140);
-            lblGenero.Name = "lblGenero";
-            lblGenero.Size = new Size(52, 15);
-            lblGenero.TabIndex = 50;
-            lblGenero.Text = "Genero:";
-            // 
-            // lblNumero
-            // 
-            lblNumero.AutoSize = true;
-            lblNumero.Location = new Point(317, 52);
-            lblNumero.Name = "lblNumero";
-            lblNumero.Size = new Size(56, 15);
-            lblNumero.TabIndex = 56;
-            lblNumero.Text = "Numero:";
-            // 
-            // lblCodigoPostal
-            // 
-            lblCodigoPostal.AutoSize = true;
-            lblCodigoPostal.Location = new Point(289, 81);
-            lblCodigoPostal.Name = "lblCodigoPostal";
-            lblCodigoPostal.Size = new Size(84, 15);
-            lblCodigoPostal.TabIndex = 57;
-            lblCodigoPostal.Text = "Codigo postal:";
-            // 
-            // lblLocalidad
-            // 
-            lblLocalidad.AutoSize = true;
-            lblLocalidad.Location = new Point(312, 111);
-            lblLocalidad.Name = "lblLocalidad";
-            lblLocalidad.Size = new Size(61, 15);
-            lblLocalidad.TabIndex = 58;
-            lblLocalidad.Text = "Localidad:";
-            // 
-            // lblCiudad
-            // 
-            lblCiudad.AutoSize = true;
-            lblCiudad.Location = new Point(326, 140);
-            lblCiudad.Name = "lblCiudad";
-            lblCiudad.Size = new Size(47, 15);
-            lblCiudad.TabIndex = 59;
-            lblCiudad.Text = "Ciudad:";
-            // 
-            // lblProvincia
-            // 
-            lblProvincia.AutoSize = true;
-            lblProvincia.Location = new Point(312, 171);
-            lblProvincia.Name = "lblProvincia";
-            lblProvincia.Size = new Size(61, 15);
-            lblProvincia.TabIndex = 60;
-            lblProvincia.Text = "Provincia:";
-            // 
-            // lblPais
-            // 
-            lblPais.AutoSize = true;
-            lblPais.Location = new Point(342, 199);
-            lblPais.Name = "lblPais";
-            lblPais.Size = new Size(31, 15);
-            lblPais.TabIndex = 61;
-            lblPais.Text = "Pais:";
-            // 
-            // lblClub
-            // 
-            lblClub.AutoSize = true;
-            lblClub.Location = new Point(339, 226);
-            lblClub.Name = "lblClub";
-            lblClub.Size = new Size(34, 15);
-            lblClub.TabIndex = 62;
-            lblClub.Text = "Club:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(334, 257);
-            label19.Name = "label19";
-            label19.Size = new Size(39, 15);
-            label19.TabIndex = 63;
-            label19.Text = "Nivel:";
-            // 
-            // txtProvincia
-            // 
-            txtProvincia.BackColor = SystemColors.ActiveCaption;
-            txtProvincia.BorderStyle = BorderStyle.None;
-            txtProvincia.Location = new Point(379, 171);
-            txtProvincia.Name = "txtProvincia";
-            txtProvincia.Size = new Size(130, 16);
-            txtProvincia.TabIndex = 73;
-            // 
-            // txtNumero
-            // 
-            txtNumero.BackColor = SystemColors.ActiveCaption;
-            txtNumero.BorderStyle = BorderStyle.None;
-            txtNumero.Location = new Point(379, 52);
-            txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(130, 16);
-            txtNumero.TabIndex = 75;
-            // 
-            // txtCodigoPostal
-            // 
-            txtCodigoPostal.BackColor = SystemColors.ActiveCaption;
-            txtCodigoPostal.BorderStyle = BorderStyle.None;
-            txtCodigoPostal.Location = new Point(379, 81);
-            txtCodigoPostal.Name = "txtCodigoPostal";
-            txtCodigoPostal.Size = new Size(130, 16);
-            txtCodigoPostal.TabIndex = 76;
-            // 
-            // txtLocalidad
-            // 
-            txtLocalidad.BackColor = SystemColors.ActiveCaption;
-            txtLocalidad.BorderStyle = BorderStyle.None;
-            txtLocalidad.Location = new Point(379, 111);
-            txtLocalidad.Name = "txtLocalidad";
-            txtLocalidad.Size = new Size(130, 16);
-            txtLocalidad.TabIndex = 77;
-            // 
-            // txtCiudad
-            // 
-            txtCiudad.BackColor = SystemColors.ActiveCaption;
-            txtCiudad.BorderStyle = BorderStyle.None;
-            txtCiudad.Location = new Point(379, 140);
-            txtCiudad.Name = "txtCiudad";
-            txtCiudad.Size = new Size(130, 16);
-            txtCiudad.TabIndex = 78;
-            // 
-            // txtPais
-            // 
-            txtPais.BackColor = SystemColors.ActiveCaption;
-            txtPais.BorderStyle = BorderStyle.None;
-            txtPais.Location = new Point(379, 199);
-            txtPais.Name = "txtPais";
-            txtPais.Size = new Size(130, 16);
-            txtPais.TabIndex = 79;
-            // 
-            // txtClub
-            // 
-            txtClub.BackColor = SystemColors.ActiveCaption;
-            txtClub.BorderStyle = BorderStyle.None;
-            txtClub.Location = new Point(379, 227);
-            txtClub.Name = "txtClub";
-            txtClub.Size = new Size(130, 16);
-            txtClub.TabIndex = 80;
-            // 
-            // txtNivel
-            // 
-            txtNivel.BackColor = SystemColors.ActiveCaption;
-            txtNivel.BorderStyle = BorderStyle.None;
-            txtNivel.Location = new Point(379, 257);
-            txtNivel.Name = "txtNivel";
-            txtNivel.Size = new Size(130, 16);
-            txtNivel.TabIndex = 81;
-            // 
             // ConsultarClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(554, 351);
+            ClientSize = new Size(614, 351);
             Controls.Add(btnVolver);
             Controls.Add(gbDatos);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(570, 390);
-            MinimumSize = new Size(570, 390);
+            MaximumSize = new Size(630, 390);
+            MinimumSize = new Size(630, 390);
             Name = "ConsultarClienteForm";
             Text = "Gol Ahora - Consultar cliente";
             Load += ConsultarClienteForm_Load;

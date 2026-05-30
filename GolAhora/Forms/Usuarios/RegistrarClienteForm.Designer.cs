@@ -39,6 +39,18 @@
             btnRegistrar = new Button();
             btnCancelar = new Button();
             gbDatos = new GroupBox();
+            label1 = new Label();
+            txtCalle = new MaskedTextBox();
+            txtNumero = new MaskedTextBox();
+            cbPais = new ComboBox();
+            cbProvincia = new ComboBox();
+            txtCodigoPostal = new MaskedTextBox();
+            cbCiudad = new ComboBox();
+            cbLocalidad = new ComboBox();
+            txtTelefono = new MaskedTextBox();
+            txtEmail = new MaskedTextBox();
+            txtFechaNacimiento = new MaskedTextBox();
+            cbGeneros = new ComboBox();
             txtDni = new MaskedTextBox();
             cbNacionalidad = new ComboBox();
             txtApellido = new MaskedTextBox();
@@ -51,25 +63,13 @@
             lblGenero = new Label();
             lblNacionalidad = new Label();
             lblNombre = new Label();
-            cbGeneros = new ComboBox();
-            txtFechaNacimiento = new MaskedTextBox();
-            txtEmail = new MaskedTextBox();
-            txtTelefono = new MaskedTextBox();
-            cbLocalidad = new ComboBox();
-            cbCiudad = new ComboBox();
-            txtCodigoPostal = new MaskedTextBox();
-            cbProvincia = new ComboBox();
-            cbPais = new ComboBox();
-            txtNumero = new MaskedTextBox();
-            txtCalle = new MaskedTextBox();
-            label1 = new Label();
             gbDatos.SuspendLayout();
             SuspendLayout();
             // 
             // lblPais
             // 
             lblPais.AutoSize = true;
-            lblPais.Location = new Point(351, 171);
+            lblPais.Location = new Point(365, 172);
             lblPais.Name = "lblPais";
             lblPais.Size = new Size(31, 15);
             lblPais.TabIndex = 61;
@@ -78,7 +78,7 @@
             // lblProvincia
             // 
             lblProvincia.AutoSize = true;
-            lblProvincia.Location = new Point(321, 140);
+            lblProvincia.Location = new Point(335, 141);
             lblProvincia.Name = "lblProvincia";
             lblProvincia.Size = new Size(61, 15);
             lblProvincia.TabIndex = 60;
@@ -87,7 +87,7 @@
             // lblCiudad
             // 
             lblCiudad.AutoSize = true;
-            lblCiudad.Location = new Point(335, 81);
+            lblCiudad.Location = new Point(349, 82);
             lblCiudad.Name = "lblCiudad";
             lblCiudad.Size = new Size(47, 15);
             lblCiudad.TabIndex = 59;
@@ -96,7 +96,7 @@
             // lblLocalidad
             // 
             lblLocalidad.AutoSize = true;
-            lblLocalidad.Location = new Point(321, 52);
+            lblLocalidad.Location = new Point(335, 53);
             lblLocalidad.Name = "lblLocalidad";
             lblLocalidad.Size = new Size(61, 15);
             lblLocalidad.TabIndex = 58;
@@ -105,7 +105,7 @@
             // lblCodigoPostal
             // 
             lblCodigoPostal.AutoSize = true;
-            lblCodigoPostal.Location = new Point(298, 111);
+            lblCodigoPostal.Location = new Point(312, 112);
             lblCodigoPostal.Name = "lblCodigoPostal";
             lblCodigoPostal.Size = new Size(84, 15);
             lblCodigoPostal.TabIndex = 57;
@@ -114,7 +114,7 @@
             // lblNumero
             // 
             lblNumero.AutoSize = true;
-            lblNumero.Location = new Point(326, 201);
+            lblNumero.Location = new Point(340, 202);
             lblNumero.Name = "lblNumero";
             lblNumero.Size = new Size(56, 15);
             lblNumero.TabIndex = 56;
@@ -123,7 +123,7 @@
             // lblCalle
             // 
             lblCalle.AutoSize = true;
-            lblCalle.Location = new Point(346, 229);
+            lblCalle.Location = new Point(360, 230);
             lblCalle.Name = "lblCalle";
             lblCalle.Size = new Size(36, 15);
             lblCalle.TabIndex = 55;
@@ -131,7 +131,7 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(467, 316);
+            btnRegistrar.Location = new Point(487, 316);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(75, 23);
             btnRegistrar.TabIndex = 12;
@@ -185,9 +185,101 @@
             gbDatos.Location = new Point(12, 12);
             gbDatos.Name = "gbDatos";
             gbDatos.Padding = new Padding(10);
-            gbDatos.Size = new Size(530, 290);
+            gbDatos.Size = new Size(550, 290);
             gbDatos.TabIndex = 10;
             gbDatos.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(340, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(179, 15);
+            label1.TabIndex = 112;
+            label1.Text = "Datos de residencia del cliente:";
+            // 
+            // txtCalle
+            // 
+            txtCalle.Location = new Point(398, 227);
+            txtCalle.Name = "txtCalle";
+            txtCalle.Size = new Size(121, 23);
+            txtCalle.TabIndex = 111;
+            // 
+            // txtNumero
+            // 
+            txtNumero.Location = new Point(398, 197);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(121, 23);
+            txtNumero.TabIndex = 110;
+            // 
+            // cbPais
+            // 
+            cbPais.FormattingEnabled = true;
+            cbPais.Location = new Point(398, 167);
+            cbPais.Name = "cbPais";
+            cbPais.Size = new Size(121, 23);
+            cbPais.TabIndex = 109;
+            // 
+            // cbProvincia
+            // 
+            cbProvincia.FormattingEnabled = true;
+            cbProvincia.Location = new Point(398, 137);
+            cbProvincia.Name = "cbProvincia";
+            cbProvincia.Size = new Size(121, 23);
+            cbProvincia.TabIndex = 108;
+            // 
+            // txtCodigoPostal
+            // 
+            txtCodigoPostal.Location = new Point(398, 108);
+            txtCodigoPostal.Name = "txtCodigoPostal";
+            txtCodigoPostal.Size = new Size(121, 23);
+            txtCodigoPostal.TabIndex = 107;
+            // 
+            // cbCiudad
+            // 
+            cbCiudad.FormattingEnabled = true;
+            cbCiudad.Location = new Point(398, 78);
+            cbCiudad.Name = "cbCiudad";
+            cbCiudad.Size = new Size(121, 23);
+            cbCiudad.TabIndex = 106;
+            // 
+            // cbLocalidad
+            // 
+            cbLocalidad.FormattingEnabled = true;
+            cbLocalidad.Location = new Point(398, 49);
+            cbLocalidad.Name = "cbLocalidad";
+            cbLocalidad.Size = new Size(121, 23);
+            cbLocalidad.TabIndex = 105;
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(156, 226);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(121, 23);
+            txtTelefono.TabIndex = 104;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(156, 197);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(121, 23);
+            txtEmail.TabIndex = 103;
+            // 
+            // txtFechaNacimiento
+            // 
+            txtFechaNacimiento.Location = new Point(156, 168);
+            txtFechaNacimiento.Name = "txtFechaNacimiento";
+            txtFechaNacimiento.Size = new Size(121, 23);
+            txtFechaNacimiento.TabIndex = 102;
+            // 
+            // cbGeneros
+            // 
+            cbGeneros.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbGeneros.FormattingEnabled = true;
+            cbGeneros.Location = new Point(156, 138);
+            cbGeneros.Name = "cbGeneros";
+            cbGeneros.Size = new Size(121, 23);
+            cbGeneros.TabIndex = 101;
             // 
             // txtDni
             // 
@@ -290,111 +382,19 @@
             lblNombre.TabIndex = 46;
             lblNombre.Text = "Nombre:";
             // 
-            // cbGeneros
-            // 
-            cbGeneros.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbGeneros.FormattingEnabled = true;
-            cbGeneros.Location = new Point(156, 138);
-            cbGeneros.Name = "cbGeneros";
-            cbGeneros.Size = new Size(121, 23);
-            cbGeneros.TabIndex = 101;
-            // 
-            // txtFechaNacimiento
-            // 
-            txtFechaNacimiento.Location = new Point(156, 168);
-            txtFechaNacimiento.Name = "txtFechaNacimiento";
-            txtFechaNacimiento.Size = new Size(121, 23);
-            txtFechaNacimiento.TabIndex = 102;
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(156, 197);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(121, 23);
-            txtEmail.TabIndex = 103;
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(156, 226);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(121, 23);
-            txtTelefono.TabIndex = 104;
-            // 
-            // cbLocalidad
-            // 
-            cbLocalidad.FormattingEnabled = true;
-            cbLocalidad.Location = new Point(384, 48);
-            cbLocalidad.Name = "cbLocalidad";
-            cbLocalidad.Size = new Size(121, 23);
-            cbLocalidad.TabIndex = 105;
-            // 
-            // cbCiudad
-            // 
-            cbCiudad.FormattingEnabled = true;
-            cbCiudad.Location = new Point(384, 77);
-            cbCiudad.Name = "cbCiudad";
-            cbCiudad.Size = new Size(121, 23);
-            cbCiudad.TabIndex = 106;
-            // 
-            // txtCodigoPostal
-            // 
-            txtCodigoPostal.Location = new Point(384, 107);
-            txtCodigoPostal.Name = "txtCodigoPostal";
-            txtCodigoPostal.Size = new Size(121, 23);
-            txtCodigoPostal.TabIndex = 107;
-            // 
-            // cbProvincia
-            // 
-            cbProvincia.FormattingEnabled = true;
-            cbProvincia.Location = new Point(384, 136);
-            cbProvincia.Name = "cbProvincia";
-            cbProvincia.Size = new Size(121, 23);
-            cbProvincia.TabIndex = 108;
-            // 
-            // cbPais
-            // 
-            cbPais.FormattingEnabled = true;
-            cbPais.Location = new Point(384, 166);
-            cbPais.Name = "cbPais";
-            cbPais.Size = new Size(121, 23);
-            cbPais.TabIndex = 109;
-            // 
-            // txtNumero
-            // 
-            txtNumero.Location = new Point(384, 196);
-            txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(121, 23);
-            txtNumero.TabIndex = 110;
-            // 
-            // txtCalle
-            // 
-            txtCalle.Location = new Point(384, 226);
-            txtCalle.Name = "txtCalle";
-            txtCalle.Size = new Size(121, 23);
-            txtCalle.TabIndex = 111;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(326, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(179, 15);
-            label1.TabIndex = 112;
-            label1.Text = "Datos de residencia del cliente:";
-            // 
             // RegistrarClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(554, 351);
+            ClientSize = new Size(574, 351);
             Controls.Add(btnRegistrar);
             Controls.Add(btnCancelar);
             Controls.Add(gbDatos);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(570, 390);
-            MinimumSize = new Size(570, 390);
+            MaximumSize = new Size(590, 390);
+            MinimumSize = new Size(590, 390);
             Name = "RegistrarClienteForm";
             Text = "Gol Ahora - Registrar cliente";
             Load += RegistrarClienteForm_Load;
