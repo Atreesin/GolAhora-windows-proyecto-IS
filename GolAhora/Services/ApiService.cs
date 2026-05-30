@@ -793,7 +793,172 @@ namespace GolAhora.Services
                 }
             }
         }
-        //
+        // Disponibilidad 
+
+        //Devuelve la disponibilidad de canchas para una fecha y hora especifica
+
+        public async Task<List<Disponibilidad>> GetDisponibilidadCanchasFechaAsync(string fecha, string HoraInicio, string HoraFin)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+
+            try 
+            {
+                response = await _client.GetAsync($"disponibilidad");
+            }
+
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode) 
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Disponibilidad>();
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Disponibilidad> disponibilidad = JsonSerializer.Deserialize<List<Disponibilidad>>(jsonString, opciones);
+                return disponibilidad;
+            }
+            else 
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de disponibilidad de canchas");
+                return null;
+            }
+        }
+
+
+        //Obtener disponibilidad de cancha especifica por id de cancha
+
+        public async Task<List<Disponibilidad>> GetDisponibilidadCanchaAsync(int idCancha)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync($"disponibilidad/cancha_id={idCancha}/disponibilidad");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Disponibilidad>();
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Disponibilidad> disponibilidad = JsonSerializer.Deserialize<List<Disponibilidad>>(jsonString, opciones);
+                return disponibilidad;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de disponibilidad de la cancha");
+                return null;
+            }
+        }
+
+        // Obtener lista de cancha que no esta disponible en una fecha especifica
+
+        public async Task<List<Cancha>> GetCanchasCerradasAsync(string fecha) 
+        {
+            if(string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+
+            try 
+            {
+                response = await _client.GetAsync($"disponibilidad/cerradas");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(jsonString)) return new List<Cancha>();
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                List<Cancha> canchasCerradas = JsonSerializer.Deserialize<List<Cancha>>(jsonString, opciones);
+                return canchasCerradas;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de canchas cerradas");
+                return null;
+            }
+        }
+
+        //Obtener disponibilidad de un dia especifico para una cancha especifica
+
+        public async Task<Disponibilidad> GetDisponibilidadDiaCanchaAsync (int id_cancha, string fecha)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            HttpResponseMessage response;
+
+            try
+            {
+                response = await _client.GetAsync($"disponibilidad/dia={fecha}/cancha_id={id_cancha}");
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(jsonString)) return null;
+                var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                Disponibilidad disponibilidad = JsonSerializer.Deserialize<Disponibilidad>(jsonString, opciones);
+                return disponibilidad;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener datos de disponibilidad de la cancha");
+
+                return null;
+            }
+        }
+
         //
         //
     }
