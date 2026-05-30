@@ -1126,21 +1126,21 @@ namespace GolAhora.Services
 
             var values = new Dictionary<string, string>
             {
-                { "nombre",             cliente.Nombre                                      ?? "" },
-                { "apellido",           cliente.Apellido                                    ?? "" },
-                { "nacionalidad",       cliente.Nacionalidad                                ?? "" },
-                { "dni",                cliente.Dni                                         ?? "" },
-                { "genero",             cliente.Genero                                      ?? "" },
-                { "fecha_nacimiento",   cliente.Fecha_Nacimiento.ToString("yyyy-MM-dd") },
-                { "telefono",           cliente.Telefono                                    ?? "" },
-                { "email",              cliente.Email                                       ?? "" },
-                { "calle",              calle },
-                { "numero",             numero },
-                { "codigo_postal",      codigoPostal },
-                { "pais",               pais },
-                { "provincia",          provincia },
-                { "ciudad",             ciudad },
-                { "localidad",          localidad },
+                { "nombre", cliente.Nombre ?? "" },
+                { "apellido", cliente.Apellido ?? "" },
+                { "nacionalidad", cliente.Nacionalidad ?? "" },
+                { "dni", cliente.Dni ?? "" },
+                { "genero", cliente.Genero ?? "" },
+                { "fecha_nacimiento", cliente.Fecha_Nacimiento.ToString("yyyy-MM-dd") },
+                { "telefono", cliente.Telefono ?? "" },
+                { "email", cliente.Email ?? "" },
+                { "calle", calle },
+                { "numero", numero },
+                { "codigo_postal", codigoPostal },
+                { "pais", pais },
+                { "provincia", provincia },
+                { "ciudad", ciudad },
+                { "localidad", localidad },
             };
 
             HttpResponseMessage response;
@@ -1221,37 +1221,39 @@ namespace GolAhora.Services
 
         public async Task<string> RegistrarCanchaAsync(string nombre, int tiempo_cancelacion, decimal precio_hora_reserva, int id_tipo_de_cancha)
         {
-            _client.DefaultRequestHeaders.Remove("Authorization");
-            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+            var values = new Dictionary<string, string>
+            {
+                { "nombre", nombre },
+                { "tiempo_cancelacion", tiempo_cancelacion.ToString() },
+                { "precio_hora_reserva", precio_hora_reserva.ToString(CultureInfo.InvariantCulture) },
+                { "id_tipo_de_cancha", id_tipo_de_cancha.ToString() }
+            };
+            var content = new FormUrlEncodedContent(values);
             HttpResponseMessage response;
 
-            using (var formData = new MultipartFormDataContent())
-            {
-                formData.Add(new StringContent(nombre), "nombre");
-                formData.Add(new StringContent(tiempo_cancelacion.ToString()), "tiempo_cancelacion");
-                formData.Add(new StringContent(precio_hora_reserva.ToString()), "precio_hora_reserva");
-                formData.Add(new StringContent(id_tipo_de_cancha.ToString()), "id_tipo_de_cancha");
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
 
-                try
-                {
-                    response = await _client.PostAsync("cancha/agregar", formData);
-                }
-                catch (HttpRequestException ex)
-                {
-                    MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
-                    return null;
-                }
-                if (response.IsSuccessStatusCode)
-                {
-                    return await response.Content.ReadAsStringAsync();
-                }
-                else
-                {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    var error = JsonNode.Parse(errorContent);
-                    MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar cancha");
-                    return null;
-                }
+            try
+            {
+                response = await _client.PostAsync("canchas/agregar", content);
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar cancha");
+                return null;
             }
         }
     }

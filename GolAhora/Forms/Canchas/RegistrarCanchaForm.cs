@@ -21,11 +21,15 @@ namespace GolAhora.Forms
 
         private async void RegistrarCanchaForm_Load(object sender, EventArgs e)
         {
-            cbTipoCancha.Items.Clear();
-            var tipos = await apiService.GetTiposDeCanchaStringListAsync();
-            cbTipoCancha.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<TipoDeCancha>>(tipos);
-            cbTipoCancha.DisplayMember = "Tipo_cancha";
-            cbTipoCancha.ValueMember = "Id";
+            var tipos = await apiService.GetTiposDeCanchaAsync();
+
+            if (tipos != null)
+            {
+                cbTipoCancha.DataSource = tipos;
+                cbTipoCancha.DisplayMember = "Tipo_Cancha";
+                cbTipoCancha.ValueMember = "Id";
+                cbTipoCancha.SelectedIndex = -1;
+            }
         }
 
         private void ValidarCampos(object sender, EventArgs e)
