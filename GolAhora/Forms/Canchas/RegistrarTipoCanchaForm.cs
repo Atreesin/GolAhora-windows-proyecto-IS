@@ -18,18 +18,13 @@ namespace GolAhora.Forms
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private async void RegistrarTipoCanchaForm_Load(object sender, EventArgs e)
         {
             cb_superficies.Items.Clear();
             var superficies = await apiService.GetSuperficiesAsync();
             cb_superficies.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<Superficie>>(superficies);
             cb_superficies.DisplayMember = "tipo_superficie";
-            cb_superficies.ValueMember = "id_superficie";
+            cb_superficies.ValueMember = "id";
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

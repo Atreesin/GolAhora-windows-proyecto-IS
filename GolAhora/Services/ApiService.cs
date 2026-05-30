@@ -793,7 +793,10 @@ namespace GolAhora.Services
                 }
             }
         }
+        //
         // Disponibilidad 
+        //
+        //
 
         //Devuelve la disponibilidad de canchas para una fecha y hora especifica
 
@@ -1011,9 +1014,161 @@ namespace GolAhora.Services
             MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar cliente");
             return null;
         }
+
+
         //
+        //Listar direcciones y relacionados
         //
-        //
+
+        public async Task<string> GetPaisesAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("paises");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener  lista de paises");
+                return null;
+            }
+        }
+
+        public async Task<string> GetProvinciasAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("provincias");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener lista de provincias");
+                return null;
+            }
+        }
+
+        public async Task<string> GetCiudadesAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("ciudades");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener lista de ciudades");
+                return null;
+            }
+        }
+
+        public async Task<string> GetLocalidadesAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("localidades");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener lista de localidades");
+                return null;
+            }
+        }
+        public async Task<string> GetGenerosAsync()
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.GetAsync("generos");
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var error = JsonNode.Parse(errorContent);
+                MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al obtener lista de generos");
+                return null;
+            }
+        }
+
     }
 }
 

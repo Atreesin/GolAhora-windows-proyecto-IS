@@ -12,7 +12,7 @@ namespace GolAhora.Forms
 {
     public partial class RegistrarClienteForm : Form
     {
-        private readonly ApiService _api = new ApiService();
+        private readonly ApiService apiService = new ApiService();
         public RegistrarClienteForm()
         {
             InitializeComponent();
@@ -26,32 +26,27 @@ namespace GolAhora.Forms
                 string.IsNullOrWhiteSpace(txtDni.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                string.IsNullOrWhiteSpace(txtNacionalidad.Text) ||
-                string.IsNullOrWhiteSpace(txtGenero.Text) ||
+                string.IsNullOrWhiteSpace(cbNacionalidad.Text) ||
+                string.IsNullOrWhiteSpace(cbGeneros.Text) ||
                 string.IsNullOrWhiteSpace(txtFechaNacimiento.Text) ||
                 string.IsNullOrWhiteSpace(txtCalle.Text) ||
                 string.IsNullOrWhiteSpace(txtNumero.Text) ||
                 string.IsNullOrWhiteSpace(txtCodigoPostal.Text) ||
-                string.IsNullOrWhiteSpace(txtPais.Text) ||
-                string.IsNullOrWhiteSpace(txtProvincia.Text) ||
-                string.IsNullOrWhiteSpace(txtCiudad.Text) ||
-                string.IsNullOrWhiteSpace(txtLocalidad.Text))
+                string.IsNullOrWhiteSpace(cbPais.Text) ||
+                string.IsNullOrWhiteSpace(cbProvincia.Text) ||
+                string.IsNullOrWhiteSpace(cbCiudad.Text) ||
+                string.IsNullOrWhiteSpace(cbLocalidad.Text))
             {
-                MessageBox.Show("Completa todos los campos obligatorios.", "Validación");
+                MessageBox.Show("Algunos campos están vacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //validar que el formato de fecha de nacimiento tenga el formato correcto
-            if (!DateTime.TryParseExact(
+            DateTime.TryParseExact(
                 txtFechaNacimiento.Text,
                 new string[] { "dd/MM/yyyy", "d/M/yyyy" },
                 System.Globalization.CultureInfo.InvariantCulture,
                 System.Globalization.DateTimeStyles.None,
-                out DateTime fechaNacimiento))
-            {
-                MessageBox.Show("Ingrese una fecha de nacimiento válida (dd/MM/yyyy).", "Validación");
-                return;
-            }
+                out DateTime fechaNacimiento);
 
             //confirmar antes de registrar cliente
             DialogResult respuesta = MessageBox.Show(
@@ -66,9 +61,9 @@ namespace GolAhora.Forms
             {
                 Nombre = txtNombre.Text.Trim(),
                 Apellido = txtApellido.Text.Trim(),
-                Nacionalidad = txtNacionalidad.Text.Trim(),
+                Nacionalidad = cbNacionalidad.Text.Trim(),
                 Dni = txtDni.Text.Trim(),
-                Genero = txtGenero.Text.Trim(),
+                Genero = cbGeneros.Text.Trim(),
                 Fecha_Nacimiento = fechaNacimiento,
                 Telefono = txtTelefono.Text.Trim(),
                 Email = txtEmail.Text.Trim(),
@@ -76,15 +71,15 @@ namespace GolAhora.Forms
 
             btnRegistrar.Enabled = false;
 
-            var resultado = await _api.RegistrarClienteAsync(
+            var resultado = await apiService.RegistrarClienteAsync(
                 cliente,
                 txtCalle.Text.Trim(),
                 txtNumero.Text.Trim(),
                 txtCodigoPostal.Text.Trim(),
-                txtPais.Text.Trim(),
-                txtProvincia.Text.Trim(),
-                txtCiudad.Text.Trim(),
-                txtLocalidad.Text.Trim()
+                cbPais.Text.Trim(),
+                cbProvincia.Text.Trim(),
+                cbCiudad.Text.Trim(),
+                cbLocalidad.Text.Trim()
             );
             btnRegistrar.Enabled = true;
 
@@ -95,11 +90,12 @@ namespace GolAhora.Forms
             }
         }
 
-        private void RegistrarClienteForm_Load(object sender, EventArgs e)
+        private async void RegistrarClienteForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = null; //quita el foco de cualquier control para evitar que se vean los bordes de selección
-
+            CargarElementos();
         }
+
         //
         //botones
         //
@@ -113,6 +109,41 @@ namespace GolAhora.Forms
                 MessageBoxIcon.Question);
 
             if (respuesta == DialogResult.Yes) this.Close();
+        }
+
+        /*carga de elementos*/
+
+        private async void CargarElementos()
+        {
+            //cargar nacionalidades
+            cbNacionalidad.Items.Clear();
+            var paises = await apiService.GetPaisesAsync();
+            cbNacionalidad.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(paises);
+            cbNacionalidad.SelectedIndex = -1;
+            //cargar provincias
+            cbProvincia.Items.Clear();
+            var provincias = await apiService.GetProvinciasAsync();
+            cbProvincia.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(provincias);
+            cbProvincia.SelectedIndex = -1;
+            //cargar ciudades
+            cbCiudad.Items.Clear();
+            var ciudades = await apiService.GetCiudadesAsync();
+            cbCiudad.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(ciudades);
+            cbCiudad.SelectedIndex = -1;
+            //cargar localidades
+            cbLocalidad.Items.Clear();
+            var localidades = await apiService.GetLocalidadesAsync();
+            cbLocalidad.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(localidades);
+            cbLocalidad.SelectedIndex = -1;
+            //cargar generos
+            cbGeneros.Items.Clear();
+            var generos = await apiService.GetGenerosAsync();
+            cbGeneros.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(generos);
+            cbGeneros.SelectedIndex = -1;
+            //cargar paises
+            cbPais.Items.Clear();
+            cbPais.DataSource = System.Text.Json.JsonSerializer.Deserialize<List<string>>(paises);
+            cbPais.SelectedIndex = -1;
         }
     }
 }
