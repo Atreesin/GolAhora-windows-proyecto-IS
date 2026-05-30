@@ -959,6 +959,59 @@ namespace GolAhora.Services
             }
         }
 
+        /*registrar cliente*/
+        public async Task<string> RegistrarClienteAsync(Cliente cliente, string calle, string numero, string codigoPostal, string pais, string provincia, string ciudad, string localidad)
+        {
+            if (string.IsNullOrEmpty(SessionManager.SessionId))
+            {
+                MessageBox.Show("No se ha iniciado sesión", "Error");
+                return null;
+            }
+
+            _client.DefaultRequestHeaders.Remove("Authorization");
+            _client.DefaultRequestHeaders.Add("Authorization", SessionManager.SessionId);
+
+            var values = new Dictionary<string, string>
+            {
+                { "nombre",             cliente.Nombre                                      ?? "" },
+                { "apellido",           cliente.Apellido                                    ?? "" },
+                { "nacionalidad",       cliente.Nacionalidad                                ?? "" },
+                { "dni",                cliente.Dni                                         ?? "" },
+                { "genero",             cliente.Genero                                      ?? "" },
+                { "fecha_nacimiento",   cliente.Fecha_Nacimiento.ToString("yyyy-MM-dd") },
+                { "telefono",           cliente.Telefono                                    ?? "" },
+                { "email",              cliente.Email                                       ?? "" },
+                { "calle",              calle },
+                { "numero",             numero },
+                { "codigo_postal",      codigoPostal },
+                { "pais",               pais },
+                { "provincia",          provincia },
+                { "ciudad",             ciudad },
+                { "localidad",          localidad },
+            };
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await _client.PostAsync("register", new FormUrlEncodedContent(values));
+            }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("No se pudo establecer conexión con el servidor", "Error de conexión");
+                return null;
+            }
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+
+            var errorContent = await response.Content.ReadAsStringAsync();
+            var error = JsonNode.Parse(errorContent);
+            MessageBox.Show($"{error?["message"] ?? "Desconocido"}", "Error al registrar cliente");
+            return null;
+        }
+        //
         //
         //
     }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj": {}
+    "C:\\Users\\Usuario\\source\\repos\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
         "projectName": "GolAhora",
-        "projectPath": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
-        "packagesPath": "C:\\Users\\vboxuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vboxuser\\Desktop\\GolAhora-windows-proyecto-IS\\GolAhora\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\GolAhora-windows-proyecto-IS\\GolAhora\\GolAhora.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\GolAhora-windows-proyecto-IS\\GolAhora\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vboxuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
